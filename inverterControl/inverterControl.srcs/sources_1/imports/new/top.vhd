@@ -6,13 +6,13 @@ use ieee.NUMERIC_STD.all;
 
 
 entity top is
---    Port (  
-----    clk_8ns     : in  STD_LOGIC;
-----            red         : out STD_LOGIC_VECTOR (7 downto 0);
-----            green       : out STD_LOGIC_VECTOR (7 downto 0);
-----            blue        : out STD_LOGIC_VECTOR (7 downto 0);
-----            row         : out STD_LOGIC_VECTOR (7 downto 0)
---           );
+    Port (  
+            clk_8ns     : in  STD_LOGIC;
+            red         : out STD_LOGIC_VECTOR (7 downto 0);
+            green       : out STD_LOGIC_VECTOR (7 downto 0);
+            blue        : out STD_LOGIC_VECTOR (7 downto 0);
+            row         : out STD_LOGIC_VECTOR (7 downto 0)
+           );
 end top;
 
 architecture Behavioral of top is
@@ -20,17 +20,15 @@ architecture Behavioral of top is
     
     
     
---    component m_row is
---    Port (  
---    counter     : in  unsigned(7 downto 0)  := "00000000";
---            red_out     : in  STD_LOGIC_VECTOR(63 downto 0);
---            green_out   : in  STD_LOGIC_VECTOR(63 downto 0);
---            blue_out    : in  STD_LOGIC_VECTOR(63 downto 0);
---            red_pwm     : out STD_LOGIC_VECTOR(7 downto 0);
---            green_pwm   : out STD_LOGIC_VECTOR(7 downto 0);
---            blue_pwm    : out STD_LOGIC_VECTOR(7 downto 0)
---           );
---end component;
+    component generic_pwm is
+    Port ( clk            : in  STD_LOGIC;
+           freq           : in  STD_LOGIC_VECTOR(3 downto 0);
+           threshold_high : in  signed(31 downto 0);
+           threshold_low  : in  signed(31 downto 0);
+           pwm_high       : out STD_LOGIC;
+           pwm_low        : out STD_LOGIC
+           );
+end component;
     
 --    signal prescaler       : unsigned(31 downto 0) := x"00000000";
 --    signal counter         : unsigned(7 downto 0)  := "00000000";
@@ -44,7 +42,7 @@ architecture Behavioral of top is
 --    signal column       : STD_LOGIC_VECTOR(7 downto 0);
 begin
 
-
+row <= "11111110";
 --prescaling_process:
 --process (clk_8ns)
 --begin
@@ -73,19 +71,34 @@ begin
 
 
 
---row0:m_row
---port map(
---    counter     => counter,
---    red_out     => x"00112233445566778899AABBCCDDEEFF",
---    green_out   => x"00112233445566778899AABBCCDDEEFF",
---    blue_out    => x"00112233445566778899AABBCCDDEEFF",
---    red_pwm     => red,
---    green_pwm   => green,
---    blue_pwm    => blue
---);
+generic_pwm0:generic_pwm
+port map(
+           clk            => clk_8ns,
+           freq           => "0000",
+           threshold_high => x"047868C0", -- 75000000
+           threshold_low  => x"03B9ACA0", -- 62500000
+           pwm_high       => red(0),
+           pwm_low        => red(1)
+);
 
+generic_pwm1:generic_pwm
+port map(
+           clk            => clk_8ns,
+           freq           => "0001",
+           threshold_high => x"047868C0", -- 75000000
+           threshold_low  => x"03B9ACA0", -- 62500000
+           pwm_high       => red(2),
+           pwm_low        => red(3)
+);
 
-
-
+generic_pwm2:generic_pwm
+port map(
+           clk            => clk_8ns,
+           freq           => "0010",
+           threshold_high => x"047868C0", -- 75000000
+           threshold_low  => x"03B9ACA0", -- 62500000
+           pwm_high       => red(4),
+           pwm_low        => red(5)
+);
 
 end Behavioral;
