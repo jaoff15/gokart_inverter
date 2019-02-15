@@ -87,10 +87,10 @@ end process;
 pwm_high_process:
 process(counter)
 begin
-    -- If counter is under threshold. 
-    -- Output: 0
-    -- If counter is over threshold.
+    -- If counter is over threshold. 
     -- Output: 1
+    -- If counter is under threshold.
+    -- Output: 0
     if (counter > threshold_high) then
         pwm_high <= HIGH;
     else
