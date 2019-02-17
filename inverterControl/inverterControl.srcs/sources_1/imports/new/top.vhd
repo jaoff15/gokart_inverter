@@ -16,87 +16,55 @@ entity top is
 end top;
 
 architecture Behavioral of top is
-
-    
-    
-    
-    component generic_pwm is
-    Port ( clk            : in  STD_LOGIC;
-           freq           : in  STD_LOGIC_VECTOR(3 downto 0);
-           threshold_high : in  signed(31 downto 0);
-           threshold_low  : in  signed(31 downto 0);
-           pwm_high       : out STD_LOGIC;
-           pwm_low        : out STD_LOGIC
+    component pwm is
+    Port (  
+            clk             : in  STD_LOGIC;
+            duty_cycle      : in  signed(10 downto 0);
+            phase           : in  STD_LOGIC_VECTOR(1 downto 0);
+            pwm_high        : out STD_LOGIC;
+            pwm_low         : out STD_LOGIC
            );
 end component;
-    
---    signal prescaler       : unsigned(31 downto 0) := x"00000000";
---    signal counter         : unsigned(7 downto 0)  := "00000000";
---    signal column_counter  : unsigned(7 downto 0)  := "00000000";
-    
---    signal color_r      : STD_LOGIC_VECTOR(63 downto 0);
---    signal color_g      : STD_LOGIC_VECTOR(63 downto 0);
---    signal color_b      : STD_LOGIC_VECTOR(63 downto 0);
-    
-    
---    signal column       : STD_LOGIC_VECTOR(7 downto 0);
+    -- Clock prescaler
+    signal prescaler       : unsigned(31 downto 0) := x"00000000";
 begin
 
 row <= "11111110";
---prescaling_process:
---process (clk_8ns)
---begin
---   if rising_edge(clk_8ns) then
---        prescaler <= prescaler + 1;
---   end if;
---end process;
 
+prescaling_process:
+process (clk_8ns)
+begin
+   if rising_edge(clk_8ns) then
+        prescaler <= prescaler + 1;
+   end if;
+end process;
 
---counter_process:
---process (prescaler)
---begin
----- 7.5kHz
---   if rising_edge(prescaler(14)) then
---        counter <= counter + 1;
---   end if;
---end process;
-
---column_process:
---process (prescaler)
---begin
---   if rising_edge(prescaler(20)) then
---        column_counter <= column_counter + 1;
---   end if;
---end process;
-
-
-
-generic_pwm0:generic_pwm
+-- Phase 1. 0 degrees phase shift
+generic_pwm0:pwm
 port map(
-           clk            => clk_8ns,
-           freq           => "0000",
-           threshold_high => x"047868C0", -- 75000000
-           threshold_low  => x"03B9ACA0", -- 62500000
+           clk            => prescaler(16),
+           duty_cycle     => "00111110100", -- 50%
+           phase          => "00",
            pwm_high       => red(0),
            pwm_low        => red(1)
 );
 
-generic_pwm1:generic_pwm
+-- Phase 2. 120 degrees phase shift
+generic_pwm1:pwm
 port map(
-           clk            => clk_8ns,
-           freq           => "0001",
-           threshold_high => x"047868C0", -- 75000000
-           threshold_low  => x"03B9ACA0", -- 62500000
+           clk            => prescaler(16),
+           duty_cycle     => "00111110100", -- 50%
+           phase          => "01",
            pwm_high       => red(2),
            pwm_low        => red(3)
 );
 
-generic_pwm2:generic_pwm
+-- Phase 3. 240 degrees phase shift
+generic_pwm2:pwm
 port map(
-           clk            => clk_8ns,
-           freq           => "0010",
-           threshold_high => x"047868C0", -- 75000000
-           threshold_low  => x"03B9ACA0", -- 62500000
+           clk            => prescaler(16),
+           duty_cycle     => "00111110100", -- 50%
+           phase          => "10",
            pwm_high       => red(4),
            pwm_low        => red(5)
 );

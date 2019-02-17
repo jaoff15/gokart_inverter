@@ -23,16 +23,16 @@ create_project -in_memory -part xc7z010clg400-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.cache/wt [current_project]
-set_property parent.project_path /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.xpr [current_project]
+set_property webtalk.parent_dir C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.cache/wt [current_project]
+set_property parent.project_path C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
-set_property ip_output_repo /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.cache/ip [current_project]
+set_property ip_output_repo c:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/generic_pwm.vhd
-  /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd
+  C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd
+  C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -42,8 +42,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc
-set_property used_in_implementation false [get_files /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc]
+read_xdc C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc
+set_property used_in_implementation false [get_files C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

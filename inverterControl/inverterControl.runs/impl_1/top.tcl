@@ -70,12 +70,12 @@ set rc [catch {
   set_property board_part digilentinc.com:zybo:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.cache/wt [current_project]
-  set_property parent.project_path /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.xpr [current_project]
-  set_property ip_output_repo /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.cache/wt [current_project]
+  set_property parent.project_path C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.xpr [current_project]
+  set_property ip_output_repo C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1/top.dcp
-  read_xdc /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc
+  add_files -quiet C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/top.dcp
+  read_xdc C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc
   link_design -top top -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]
