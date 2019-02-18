@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc rfile:../../../inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc rfile:../../../inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN L16   IOSTANDARD LVCMOS33 } [get_ports { clk_8ns }]; #IO_L11P_T1_SRCC_35 Sch=sysclk
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]

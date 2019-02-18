@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun Feb 17 23:34:57 2019
-| Host         : LAPTOP-0SL6J4HK running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Mon Feb 18 08:40:20 2019
+| Host         : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
 | Device       : 7z010-clg400
@@ -52,6 +52,8 @@ Table of Contents
 
 1. checking no_clock
 --------------------
+ There are 34 register/latch pins with no clock driven by root clock pin: prescaler_reg[15]/Q (HIGH)
+
  There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[16]/Q (HIGH)
 
 
@@ -67,7 +69,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 198 pins that are not constrained for maximum delay. (HIGH)
+ There are 296 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -81,7 +83,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 6 ports with no output delay specified. (HIGH)
+ There are 7 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -126,7 +128,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      4.537        0.000                      0                   17        0.324        0.000                      0                   17        3.500        0.000                       0                    18  
+      4.290        0.000                      0                   17        0.324        0.000                      0                   17        3.500        0.000                       0                    18  
 
 
 All user specified timing constraints are met.
@@ -149,7 +151,7 @@ sys_clk_pin  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk_pin         4.537        0.000                      0                   17        0.324        0.000                      0                   17        3.500        0.000                       0                    18  
+sys_clk_pin         4.290        0.000                      0                   17        0.324        0.000                      0                   17        3.500        0.000                       0                    18  
 
 
 ------------------------------------------------------------------------------------------------
@@ -180,7 +182,7 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk_pin
   To Clock:  sys_clk_pin
 
-Setup :            0  Failing Endpoints,  Worst Slack        4.537ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        4.290ns,  Total Violation        0.000ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.324ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
@@ -188,15 +190,78 @@ PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Vio
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             4.537ns  (required time - arrival time)
-  Source:                 prescaler_reg[16]/C
+Slack (MET) :             4.290ns  (required time - arrival time)
+  Source:                 prescaler_reg[15]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[16]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             sys_clk_pin
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        3.490ns  (logic 0.928ns (26.593%)  route 2.562ns (73.407%))
+  Data Path Delay:        3.713ns  (logic 1.305ns (35.151%)  route 2.408ns (64.849%))
+  Logic Levels:           3  (BUFG=1 CARRY4=2)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.891ns = ( 12.891 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.340ns
+    Clock Pessimism Removal (CPR):    0.425ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L16                                               0.000     0.000 r  clk_8ns (IN)
+                         net (fo=0)                   0.000     0.000    clk_8ns
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[15]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X22Y46         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[15]/Q
+                         net (fo=1, routed)           0.580     6.377    clk
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     6.478 r  clk_BUFG_inst/O
+                         net (fo=35, routed)          1.827     8.305    clk_BUFG
+    SLICE_X22Y46         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.525     8.830 r  prescaler_reg[12]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     8.830    prescaler_reg[12]_i_1_n_0
+    SLICE_X22Y47         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223     9.053 r  prescaler_reg[16]_i_1/O[0]
+                         net (fo=1, routed)           0.000     9.053    prescaler_reg[16]_i_1_n_7
+    SLICE_X22Y47         FDRE                                         r  prescaler_reg[16]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      8.000     8.000 r  
+    L16                                               0.000     8.000 r  clk_8ns (IN)
+                         net (fo=0)                   0.000     8.000    clk_8ns
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.499    12.891    clk_8ns_IBUF_BUFG
+    SLICE_X22Y47         FDRE                                         r  prescaler_reg[16]/C
+                         clock pessimism              0.425    13.316    
+                         clock uncertainty           -0.035    13.281    
+    SLICE_X22Y47         FDRE (Setup_fdre_C_D)        0.062    13.343    prescaler_reg[16]
+  -------------------------------------------------------------------
+                         required time                         13.343    
+                         arrival time                          -9.053    
+  -------------------------------------------------------------------
+                         slack                                  4.290    
+
+Slack (MET) :             4.690ns  (required time - arrival time)
+  Source:                 prescaler_reg[15]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            prescaler_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        3.337ns  (logic 0.929ns (27.843%)  route 2.408ns (72.157%))
   Logic Levels:           2  (BUFG=1 CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
@@ -218,16 +283,16 @@ Slack (MET) :             4.537ns  (required time - arrival time)
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
-    SLICE_X22Y46         FDRE                                         r  prescaler_reg[16]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[15]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y46         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[16]/Q
-                         net (fo=1, routed)           0.735     6.531    clk
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.101     6.632 r  clk_BUFG_inst/O
-                         net (fo=103, routed)         1.827     8.459    clk_BUFG
-    SLICE_X22Y46         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.371     8.830 r  prescaler_reg[16]_i_1/O[0]
-                         net (fo=1, routed)           0.000     8.830    prescaler_reg[16]_i_1_n_7
-    SLICE_X22Y46         FDRE                                         r  prescaler_reg[16]/D
+    SLICE_X22Y46         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[15]/Q
+                         net (fo=1, routed)           0.580     6.377    clk
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.101     6.478 r  clk_BUFG_inst/O
+                         net (fo=35, routed)          1.827     8.305    clk_BUFG
+    SLICE_X22Y46         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.372     8.677 r  prescaler_reg[12]_i_1/O[3]
+                         net (fo=1, routed)           0.000     8.677    prescaler_reg[12]_i_1_n_4
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[15]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -238,17 +303,17 @@ Slack (MET) :             4.537ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y46         FDRE                                         r  prescaler_reg[16]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[15]/C
                          clock pessimism              0.450    13.340    
                          clock uncertainty           -0.035    13.305    
-    SLICE_X22Y46         FDRE (Setup_fdre_C_D)        0.062    13.367    prescaler_reg[16]
+    SLICE_X22Y46         FDRE (Setup_fdre_C_D)        0.062    13.367    prescaler_reg[15]
   -------------------------------------------------------------------
                          required time                         13.367    
-                         arrival time                          -8.830    
+                         arrival time                          -8.677    
   -------------------------------------------------------------------
-                         slack                                  4.537    
+                         slack                                  4.690    
 
-Slack (MET) :             5.551ns  (required time - arrival time)
+Slack (MET) :             5.550ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[13]/D
@@ -258,9 +323,9 @@ Slack (MET) :             5.551ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.451ns  (logic 1.540ns (62.826%)  route 0.911ns (37.174%))
   Logic Levels:           4  (CARRY4=4)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -277,24 +342,24 @@ Slack (MET) :             5.551ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
     SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.457 r  prescaler_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.457    prescaler_reg[8]_i_1_n_0
-    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     7.791 r  prescaler_reg[12]_i_1/O[1]
-                         net (fo=1, routed)           0.000     7.791    prescaler_reg[12]_i_1_n_6
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[13]/D
+                                                      0.114     7.344 r  prescaler_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.344    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.458 r  prescaler_reg[8]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.458    prescaler_reg[8]_i_1_n_0
+    SLICE_X22Y46         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     7.792 r  prescaler_reg[12]_i_1/O[1]
+                         net (fo=1, routed)           0.000     7.792    prescaler_reg[12]_i_1_n_6
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[13]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -305,84 +370,17 @@ Slack (MET) :             5.551ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[13]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[13]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[13]
+    SLICE_X22Y46         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[13]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.791    
+                         arrival time                          -7.792    
   -------------------------------------------------------------------
-                         slack                                  5.551    
+                         slack                                  5.550    
 
-Slack (MET) :             5.572ns  (required time - arrival time)
-  Source:                 prescaler_reg[2]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            prescaler_reg[15]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        2.430ns  (logic 1.519ns (62.505%)  route 0.911ns (37.495%))
-  Logic Levels:           4  (CARRY4=4)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
-    Clock Pessimism Removal (CPR):    0.425ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
-    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.457 r  prescaler_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.457    prescaler_reg[8]_i_1_n_0
-    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313     7.770 r  prescaler_reg[12]_i_1/O[3]
-                         net (fo=1, routed)           0.000     7.770    prescaler_reg[12]_i_1_n_4
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[15]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[15]/C
-                         clock pessimism              0.425    13.315    
-                         clock uncertainty           -0.035    13.280    
-    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[15]
-  -------------------------------------------------------------------
-                         required time                         13.342    
-                         arrival time                          -7.770    
-  -------------------------------------------------------------------
-                         slack                                  5.572    
-
-Slack (MET) :             5.646ns  (required time - arrival time)
+Slack (MET) :             5.645ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[14]/D
@@ -392,9 +390,9 @@ Slack (MET) :             5.646ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.356ns  (logic 1.445ns (61.328%)  route 0.911ns (38.672%))
   Logic Levels:           4  (CARRY4=4)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -411,24 +409,24 @@ Slack (MET) :             5.646ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
     SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.457 r  prescaler_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.457    prescaler_reg[8]_i_1_n_0
-    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     7.696 r  prescaler_reg[12]_i_1/O[2]
-                         net (fo=1, routed)           0.000     7.696    prescaler_reg[12]_i_1_n_5
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[14]/D
+                                                      0.114     7.344 r  prescaler_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.344    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.458 r  prescaler_reg[8]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.458    prescaler_reg[8]_i_1_n_0
+    SLICE_X22Y46         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.697 r  prescaler_reg[12]_i_1/O[2]
+                         net (fo=1, routed)           0.000     7.697    prescaler_reg[12]_i_1_n_5
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[14]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -439,17 +437,17 @@ Slack (MET) :             5.646ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[14]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[14]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[14]
+    SLICE_X22Y46         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[14]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.696    
+                         arrival time                          -7.697    
   -------------------------------------------------------------------
-                         slack                                  5.646    
+                         slack                                  5.645    
 
-Slack (MET) :             5.662ns  (required time - arrival time)
+Slack (MET) :             5.661ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[12]/D
@@ -459,9 +457,9 @@ Slack (MET) :             5.662ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.340ns  (logic 1.429ns (61.063%)  route 0.911ns (38.937%))
   Logic Levels:           4  (CARRY4=4)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -478,24 +476,24 @@ Slack (MET) :             5.662ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
     SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.457 r  prescaler_reg[8]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.457    prescaler_reg[8]_i_1_n_0
-    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223     7.680 r  prescaler_reg[12]_i_1/O[0]
-                         net (fo=1, routed)           0.000     7.680    prescaler_reg[12]_i_1_n_7
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[12]/D
+                                                      0.114     7.344 r  prescaler_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.344    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.458 r  prescaler_reg[8]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.458    prescaler_reg[8]_i_1_n_0
+    SLICE_X22Y46         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223     7.681 r  prescaler_reg[12]_i_1/O[0]
+                         net (fo=1, routed)           0.000     7.681    prescaler_reg[12]_i_1_n_7
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[12]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -506,17 +504,17 @@ Slack (MET) :             5.662ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[12]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[12]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[12]
+    SLICE_X22Y46         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[12]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.680    
+                         arrival time                          -7.681    
   -------------------------------------------------------------------
-                         slack                                  5.662    
+                         slack                                  5.661    
 
-Slack (MET) :             5.665ns  (required time - arrival time)
+Slack (MET) :             5.664ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[9]/D
@@ -526,9 +524,9 @@ Slack (MET) :             5.665ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.337ns  (logic 1.426ns (61.013%)  route 0.911ns (38.987%))
   Logic Levels:           3  (CARRY4=3)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -545,21 +543,21 @@ Slack (MET) :             5.665ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
-    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     7.677 r  prescaler_reg[8]_i_1/O[1]
-                         net (fo=1, routed)           0.000     7.677    prescaler_reg[8]_i_1_n_6
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[9]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
+    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.344 r  prescaler_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.344    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     7.678 r  prescaler_reg[8]_i_1/O[1]
+                         net (fo=1, routed)           0.000     7.678    prescaler_reg[8]_i_1_n_6
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[9]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -570,17 +568,17 @@ Slack (MET) :             5.665ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[9]/C
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[9]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y44         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[9]
+    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[9]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.677    
+                         arrival time                          -7.678    
   -------------------------------------------------------------------
-                         slack                                  5.665    
+                         slack                                  5.664    
 
-Slack (MET) :             5.686ns  (required time - arrival time)
+Slack (MET) :             5.685ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[11]/D
@@ -590,9 +588,9 @@ Slack (MET) :             5.686ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.316ns  (logic 1.405ns (60.660%)  route 0.911ns (39.340%))
   Logic Levels:           3  (CARRY4=3)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -609,21 +607,21 @@ Slack (MET) :             5.686ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
-    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313     7.656 r  prescaler_reg[8]_i_1/O[3]
-                         net (fo=1, routed)           0.000     7.656    prescaler_reg[8]_i_1_n_4
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[11]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
+    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.344 r  prescaler_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.344    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     7.657 r  prescaler_reg[8]_i_1/O[3]
+                         net (fo=1, routed)           0.000     7.657    prescaler_reg[8]_i_1_n_4
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[11]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -634,17 +632,17 @@ Slack (MET) :             5.686ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[11]/C
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[11]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y44         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[11]
+    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[11]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.656    
+                         arrival time                          -7.657    
   -------------------------------------------------------------------
-                         slack                                  5.686    
+                         slack                                  5.685    
 
-Slack (MET) :             5.760ns  (required time - arrival time)
+Slack (MET) :             5.759ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[10]/D
@@ -654,9 +652,9 @@ Slack (MET) :             5.760ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.242ns  (logic 1.331ns (59.361%)  route 0.911ns (40.639%))
   Logic Levels:           3  (CARRY4=3)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -673,21 +671,21 @@ Slack (MET) :             5.760ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
-    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239     7.582 r  prescaler_reg[8]_i_1/O[2]
-                         net (fo=1, routed)           0.000     7.582    prescaler_reg[8]_i_1_n_5
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[10]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
+    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.344 r  prescaler_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.344    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.583 r  prescaler_reg[8]_i_1/O[2]
+                         net (fo=1, routed)           0.000     7.583    prescaler_reg[8]_i_1_n_5
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[10]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -698,17 +696,17 @@ Slack (MET) :             5.760ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[10]/C
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[10]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y44         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[10]
+    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[10]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.582    
+                         arrival time                          -7.583    
   -------------------------------------------------------------------
-                         slack                                  5.760    
+                         slack                                  5.759    
 
-Slack (MET) :             5.776ns  (required time - arrival time)
+Slack (MET) :             5.775ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[8]/D
@@ -718,9 +716,9 @@ Slack (MET) :             5.776ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.226ns  (logic 1.315ns (59.069%)  route 0.911ns (40.931%))
   Logic Levels:           3  (CARRY4=3)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -737,21 +735,21 @@ Slack (MET) :             5.776ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     7.343 r  prescaler_reg[4]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.343    prescaler_reg[4]_i_1_n_0
-    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223     7.566 r  prescaler_reg[8]_i_1/O[0]
-                         net (fo=1, routed)           0.000     7.566    prescaler_reg[8]_i_1_n_7
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[8]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
+    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.344 r  prescaler_reg[4]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.344    prescaler_reg[4]_i_1_n_0
+    SLICE_X22Y45         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223     7.567 r  prescaler_reg[8]_i_1/O[0]
+                         net (fo=1, routed)           0.000     7.567    prescaler_reg[8]_i_1_n_7
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[8]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -762,17 +760,17 @@ Slack (MET) :             5.776ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[8]/C
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[8]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y44         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[8]
+    SLICE_X22Y45         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[8]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.566    
+                         arrival time                          -7.567    
   -------------------------------------------------------------------
-                         slack                                  5.776    
+                         slack                                  5.775    
 
-Slack (MET) :             5.779ns  (required time - arrival time)
+Slack (MET) :             5.778ns  (required time - arrival time)
   Source:                 prescaler_reg[2]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            prescaler_reg[5]/D
@@ -782,9 +780,9 @@ Slack (MET) :             5.779ns  (required time - arrival time)
   Requirement:            8.000ns  (sys_clk_pin rise@8.000ns - sys_clk_pin rise@0.000ns)
   Data Path Delay:        2.223ns  (logic 1.312ns (59.014%)  route 0.911ns (40.986%))
   Logic Levels:           2  (CARRY4=2)
-  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    4.890ns = ( 12.890 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.339ns
+    Source Clock Delay      (SCD):    5.340ns
     Clock Pessimism Removal (CPR):    0.425ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -801,18 +799,18 @@ Slack (MET) :             5.779ns  (required time - arrival time)
     L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.671     5.339    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[2]/C
+                         net (fo=17, routed)          1.672     5.340    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[2]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.456     5.795 r  prescaler_reg[2]/Q
-                         net (fo=1, routed)           0.911     6.707    prescaler_reg_n_0_[2]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[2]_CO[3])
-                                                      0.522     7.229 r  prescaler_reg[0]_i_1/CO[3]
-                         net (fo=1, routed)           0.000     7.229    prescaler_reg[0]_i_1_n_0
-    SLICE_X22Y43         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     7.563 r  prescaler_reg[4]_i_1/O[1]
-                         net (fo=1, routed)           0.000     7.563    prescaler_reg[4]_i_1_n_6
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[5]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.456     5.796 r  prescaler_reg[2]/Q
+                         net (fo=1, routed)           0.911     6.708    prescaler_reg_n_0_[2]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.522     7.230 r  prescaler_reg[0]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     7.230    prescaler_reg[0]_i_1_n_0
+    SLICE_X22Y44         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     7.564 r  prescaler_reg[4]_i_1/O[1]
+                         net (fo=1, routed)           0.000     7.564    prescaler_reg[4]_i_1_n_6
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -823,15 +821,15 @@ Slack (MET) :             5.779ns  (required time - arrival time)
                          net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          1.498    12.890    clk_8ns_IBUF_BUFG
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[5]/C
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[5]/C
                          clock pessimism              0.425    13.315    
                          clock uncertainty           -0.035    13.280    
-    SLICE_X22Y43         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[5]
+    SLICE_X22Y44         FDRE (Setup_fdre_C_D)        0.062    13.342    prescaler_reg[5]
   -------------------------------------------------------------------
                          required time                         13.342    
-                         arrival time                          -7.563    
+                         arrival time                          -7.564    
   -------------------------------------------------------------------
-                         slack                                  5.779    
+                         slack                                  5.778    
 
 
 
@@ -850,8 +848,8 @@ Slack (MET) :             0.324ns  (arrival time - required time)
   Data Path Delay:        0.429ns  (logic 0.256ns (59.730%)  route 0.173ns (40.270%))
   Logic Levels:           2  (CARRY4=1 LUT1=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.473ns
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.474ns
     Clock Pessimism Removal (CPR):    0.515ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -863,17 +861,17 @@ Slack (MET) :             0.324ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.561     1.473    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[0]/C
+                         net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.141     1.614 f  prescaler_reg[0]/Q
-                         net (fo=1, routed)           0.173     1.786    prescaler_reg_n_0_[0]
-    SLICE_X22Y42         LUT1 (Prop_lut1_I0_O)        0.045     1.831 r  prescaler[0]_i_2/O
-                         net (fo=1, routed)           0.000     1.831    prescaler[0]_i_2_n_0
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[0]_O[0])
-                                                      0.070     1.901 r  prescaler_reg[0]_i_1/O[0]
-                         net (fo=1, routed)           0.000     1.901    prescaler_reg[0]_i_1_n_7
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[0]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.141     1.615 f  prescaler_reg[0]/Q
+                         net (fo=1, routed)           0.173     1.787    prescaler_reg_n_0_[0]
+    SLICE_X22Y43         LUT1 (Prop_lut1_I0_O)        0.045     1.832 r  prescaler[0]_i_2/O
+                         net (fo=1, routed)           0.000     1.832    prescaler[0]_i_2_n_0
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.070     1.902 r  prescaler_reg[0]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.902    prescaler_reg[0]_i_1_n_7
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -883,13 +881,13 @@ Slack (MET) :             0.324ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.829     1.988    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[0]/C
-                         clock pessimism             -0.515     1.473    
-    SLICE_X22Y42         FDRE (Hold_fdre_C_D)         0.105     1.578    prescaler_reg[0]
+                         net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[0]/C
+                         clock pessimism             -0.515     1.474    
+    SLICE_X22Y43         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[0]
   -------------------------------------------------------------------
-                         required time                         -1.578    
-                         arrival time                           1.901    
+                         required time                         -1.579    
+                         arrival time                           1.902    
   -------------------------------------------------------------------
                          slack                                  0.324    
 
@@ -918,14 +916,14 @@ Slack (MET) :             0.327ns  (arrival time - required time)
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[11]/C
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[11]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y44         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[11]/Q
+    SLICE_X22Y45         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[11]/Q
                          net (fo=1, routed)           0.183     1.798    prescaler_reg_n_0_[11]
-    SLICE_X22Y44         CARRY4 (Prop_carry4_S[3]_O[3])
+    SLICE_X22Y45         CARRY4 (Prop_carry4_S[3]_O[3])
                                                       0.108     1.906 r  prescaler_reg[8]_i_1/O[3]
                          net (fo=1, routed)           0.000     1.906    prescaler_reg[8]_i_1_n_4
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[11]/D
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[11]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -936,9 +934,9 @@ Slack (MET) :             0.327ns  (arrival time - required time)
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
-    SLICE_X22Y44         FDRE                                         r  prescaler_reg[11]/C
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[11]/C
                          clock pessimism             -0.515     1.474    
-    SLICE_X22Y44         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[11]
+    SLICE_X22Y45         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[11]
   -------------------------------------------------------------------
                          required time                         -1.579    
                          arrival time                           1.906    
@@ -956,8 +954,8 @@ Slack (MET) :             0.327ns  (arrival time - required time)
   Data Path Delay:        0.432ns  (logic 0.249ns (57.658%)  route 0.183ns (42.342%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.473ns
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.474ns
     Clock Pessimism Removal (CPR):    0.515ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -969,15 +967,15 @@ Slack (MET) :             0.327ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.561     1.473    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[3]/C
+                         net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.141     1.614 r  prescaler_reg[3]/Q
-                         net (fo=1, routed)           0.183     1.797    prescaler_reg_n_0_[3]
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     1.905 r  prescaler_reg[0]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.905    prescaler_reg[0]_i_1_n_4
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[3]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[3]/Q
+                         net (fo=1, routed)           0.183     1.798    prescaler_reg_n_0_[3]
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.906 r  prescaler_reg[0]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.906    prescaler_reg[0]_i_1_n_4
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -987,13 +985,13 @@ Slack (MET) :             0.327ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.829     1.988    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[3]/C
-                         clock pessimism             -0.515     1.473    
-    SLICE_X22Y42         FDRE (Hold_fdre_C_D)         0.105     1.578    prescaler_reg[3]
+                         net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[3]/C
+                         clock pessimism             -0.515     1.474    
+    SLICE_X22Y43         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[3]
   -------------------------------------------------------------------
-                         required time                         -1.578    
-                         arrival time                           1.905    
+                         required time                         -1.579    
+                         arrival time                           1.906    
   -------------------------------------------------------------------
                          slack                                  0.327    
 
@@ -1022,14 +1020,14 @@ Slack (MET) :             0.327ns  (arrival time - required time)
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[12]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[12]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y45         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[12]/Q
+    SLICE_X22Y46         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[12]/Q
                          net (fo=1, routed)           0.176     1.791    prescaler_reg_n_0_[12]
-    SLICE_X22Y45         CARRY4 (Prop_carry4_S[0]_O[0])
+    SLICE_X22Y46         CARRY4 (Prop_carry4_S[0]_O[0])
                                                       0.115     1.906 r  prescaler_reg[12]_i_1/O[0]
                          net (fo=1, routed)           0.000     1.906    prescaler_reg[12]_i_1_n_7
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[12]/D
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[12]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1040,9 +1038,9 @@ Slack (MET) :             0.327ns  (arrival time - required time)
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[12]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[12]/C
                          clock pessimism             -0.515     1.474    
-    SLICE_X22Y45         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[12]
+    SLICE_X22Y46         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[12]
   -------------------------------------------------------------------
                          required time                         -1.579    
                          arrival time                           1.906    
@@ -1074,14 +1072,14 @@ Slack (MET) :             0.327ns  (arrival time - required time)
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[4]/C
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[4]/Q
+    SLICE_X22Y44         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[4]/Q
                          net (fo=1, routed)           0.176     1.791    prescaler_reg_n_0_[4]
-    SLICE_X22Y43         CARRY4 (Prop_carry4_S[0]_O[0])
+    SLICE_X22Y44         CARRY4 (Prop_carry4_S[0]_O[0])
                                                       0.115     1.906 r  prescaler_reg[4]_i_1/O[0]
                          net (fo=1, routed)           0.000     1.906    prescaler_reg[4]_i_1_n_7
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[4]/D
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1092,9 +1090,9 @@ Slack (MET) :             0.327ns  (arrival time - required time)
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[4]/C
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[4]/C
                          clock pessimism             -0.515     1.474    
-    SLICE_X22Y43         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[4]
+    SLICE_X22Y44         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[4]
   -------------------------------------------------------------------
                          required time                         -1.579    
                          arrival time                           1.906    
@@ -1112,8 +1110,8 @@ Slack (MET) :             0.360ns  (arrival time - required time)
   Data Path Delay:        0.465ns  (logic 0.292ns (62.850%)  route 0.173ns (37.150%))
   Logic Levels:           2  (CARRY4=1 LUT1=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.988ns
-    Source Clock Delay      (SCD):    1.473ns
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.474ns
     Clock Pessimism Removal (CPR):    0.515ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1125,17 +1123,17 @@ Slack (MET) :             0.360ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.561     1.473    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[0]/C
+                         net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y42         FDRE (Prop_fdre_C_Q)         0.141     1.614 f  prescaler_reg[0]/Q
-                         net (fo=1, routed)           0.173     1.786    prescaler_reg_n_0_[0]
-    SLICE_X22Y42         LUT1 (Prop_lut1_I0_O)        0.045     1.831 r  prescaler[0]_i_2/O
-                         net (fo=1, routed)           0.000     1.831    prescaler[0]_i_2_n_0
-    SLICE_X22Y42         CARRY4 (Prop_carry4_S[0]_O[1])
-                                                      0.106     1.937 r  prescaler_reg[0]_i_1/O[1]
-                         net (fo=1, routed)           0.000     1.937    prescaler_reg[0]_i_1_n_6
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[1]/D
+    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.141     1.615 f  prescaler_reg[0]/Q
+                         net (fo=1, routed)           0.173     1.787    prescaler_reg_n_0_[0]
+    SLICE_X22Y43         LUT1 (Prop_lut1_I0_O)        0.045     1.832 r  prescaler[0]_i_2/O
+                         net (fo=1, routed)           0.000     1.832    prescaler[0]_i_2_n_0
+    SLICE_X22Y43         CARRY4 (Prop_carry4_S[0]_O[1])
+                                                      0.106     1.938 r  prescaler_reg[0]_i_1/O[1]
+                         net (fo=1, routed)           0.000     1.938    prescaler_reg[0]_i_1_n_6
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1145,13 +1143,13 @@ Slack (MET) :             0.360ns  (arrival time - required time)
     L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.829     1.988    clk_8ns_IBUF_BUFG
-    SLICE_X22Y42         FDRE                                         r  prescaler_reg[1]/C
-                         clock pessimism             -0.515     1.473    
-    SLICE_X22Y42         FDRE (Hold_fdre_C_D)         0.105     1.578    prescaler_reg[1]
+                         net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
+    SLICE_X22Y43         FDRE                                         r  prescaler_reg[1]/C
+                         clock pessimism             -0.515     1.474    
+    SLICE_X22Y43         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[1]
   -------------------------------------------------------------------
-                         required time                         -1.578    
-                         arrival time                           1.937    
+                         required time                         -1.579    
+                         arrival time                           1.938    
   -------------------------------------------------------------------
                          slack                                  0.360    
 
@@ -1180,14 +1178,14 @@ Slack (MET) :             0.363ns  (arrival time - required time)
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[12]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[12]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y45         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[12]/Q
+    SLICE_X22Y46         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[12]/Q
                          net (fo=1, routed)           0.176     1.791    prescaler_reg_n_0_[12]
-    SLICE_X22Y45         CARRY4 (Prop_carry4_S[0]_O[1])
+    SLICE_X22Y46         CARRY4 (Prop_carry4_S[0]_O[1])
                                                       0.151     1.942 r  prescaler_reg[12]_i_1/O[1]
                          net (fo=1, routed)           0.000     1.942    prescaler_reg[12]_i_1_n_6
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[13]/D
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[13]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1198,9 +1196,9 @@ Slack (MET) :             0.363ns  (arrival time - required time)
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[13]/C
+    SLICE_X22Y46         FDRE                                         r  prescaler_reg[13]/C
                          clock pessimism             -0.515     1.474    
-    SLICE_X22Y45         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[13]
+    SLICE_X22Y46         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[13]
   -------------------------------------------------------------------
                          required time                         -1.579    
                          arrival time                           1.942    
@@ -1232,14 +1230,14 @@ Slack (MET) :             0.363ns  (arrival time - required time)
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[4]/C
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[4]/Q
+    SLICE_X22Y44         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[4]/Q
                          net (fo=1, routed)           0.176     1.791    prescaler_reg_n_0_[4]
-    SLICE_X22Y43         CARRY4 (Prop_carry4_S[0]_O[1])
+    SLICE_X22Y44         CARRY4 (Prop_carry4_S[0]_O[1])
                                                       0.151     1.942 r  prescaler_reg[4]_i_1/O[1]
                          net (fo=1, routed)           0.000     1.942    prescaler_reg[4]_i_1_n_6
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[5]/D
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1250,66 +1248,14 @@ Slack (MET) :             0.363ns  (arrival time - required time)
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[5]/C
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[5]/C
                          clock pessimism             -0.515     1.474    
-    SLICE_X22Y43         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[5]
+    SLICE_X22Y44         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[5]
   -------------------------------------------------------------------
                          required time                         -1.579    
                          arrival time                           1.942    
   -------------------------------------------------------------------
                          slack                                  0.363    
-
-Slack (MET) :             0.372ns  (arrival time - required time)
-  Source:                 prescaler_reg[15]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            prescaler_reg[15]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             sys_clk_pin
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.477ns  (logic 0.249ns (52.216%)  route 0.228ns (47.784%))
-  Logic Levels:           1  (CARRY4=1)
-  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.989ns
-    Source Clock Delay      (SCD):    1.474ns
-    Clock Pessimism Removal (CPR):    0.515ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[15]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X22Y45         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[15]/Q
-                         net (fo=1, routed)           0.228     1.843    prescaler_reg_n_0_[15]
-    SLICE_X22Y45         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     1.951 r  prescaler_reg[12]_i_1/O[3]
-                         net (fo=1, routed)           0.000     1.951    prescaler_reg[12]_i_1_n_4
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[15]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk_pin rise edge)
-                                                      0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
-    SLICE_X22Y45         FDRE                                         r  prescaler_reg[15]/C
-                         clock pessimism             -0.515     1.474    
-    SLICE_X22Y45         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[15]
-  -------------------------------------------------------------------
-                         required time                         -1.579    
-                         arrival time                           1.951    
-  -------------------------------------------------------------------
-                         slack                                  0.372    
 
 Slack (MET) :             0.372ns  (arrival time - required time)
   Source:                 prescaler_reg[7]/C
@@ -1336,14 +1282,14 @@ Slack (MET) :             0.372ns  (arrival time - required time)
                          net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[7]/C
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X22Y43         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[7]/Q
+    SLICE_X22Y44         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[7]/Q
                          net (fo=1, routed)           0.228     1.843    prescaler_reg_n_0_[7]
-    SLICE_X22Y43         CARRY4 (Prop_carry4_S[3]_O[3])
+    SLICE_X22Y44         CARRY4 (Prop_carry4_S[3]_O[3])
                                                       0.108     1.951 r  prescaler_reg[4]_i_1/O[3]
                          net (fo=1, routed)           0.000     1.951    prescaler_reg[4]_i_1_n_4
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[7]/D
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[7]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
@@ -1354,14 +1300,66 @@ Slack (MET) :             0.372ns  (arrival time - required time)
                          net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
                          net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
-    SLICE_X22Y43         FDRE                                         r  prescaler_reg[7]/C
+    SLICE_X22Y44         FDRE                                         r  prescaler_reg[7]/C
                          clock pessimism             -0.515     1.474    
-    SLICE_X22Y43         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[7]
+    SLICE_X22Y44         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[7]
   -------------------------------------------------------------------
                          required time                         -1.579    
                          arrival time                           1.951    
   -------------------------------------------------------------------
                          slack                                  0.372    
+
+Slack (MET) :             0.373ns  (arrival time - required time)
+  Source:                 prescaler_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            prescaler_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.478ns  (logic 0.256ns (53.516%)  route 0.222ns (46.484%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.474ns
+    Clock Pessimism Removal (CPR):    0.515ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L16                                               0.000     0.000 r  clk_8ns (IN)
+                         net (fo=0)                   0.000     0.000    clk_8ns
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.562     1.474    clk_8ns_IBUF_BUFG
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X22Y45         FDRE (Prop_fdre_C_Q)         0.141     1.615 r  prescaler_reg[8]/Q
+                         net (fo=1, routed)           0.222     1.837    prescaler_reg_n_0_[8]
+    SLICE_X22Y45         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.115     1.952 r  prescaler_reg[8]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.952    prescaler_reg[8]_i_1_n_7
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    L16                                               0.000     0.000 r  clk_8ns (IN)
+                         net (fo=0)                   0.000     0.000    clk_8ns
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.830     1.989    clk_8ns_IBUF_BUFG
+    SLICE_X22Y45         FDRE                                         r  prescaler_reg[8]/C
+                         clock pessimism             -0.515     1.474    
+    SLICE_X22Y45         FDRE (Hold_fdre_C_D)         0.105     1.579    prescaler_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -1.579    
+                         arrival time                           1.952    
+  -------------------------------------------------------------------
+                         slack                                  0.373    
 
 
 
@@ -1376,35 +1374,35 @@ Sources:            { clk_8ns }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
 Min Period        n/a     BUFG/I   n/a            2.155         8.000       5.845      BUFGCTRL_X0Y16  clk_8ns_IBUF_BUFG_inst/I
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y46    prescaler_reg[16]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y42    prescaler_reg[1]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y42    prescaler_reg[2]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y42    prescaler_reg[3]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y43    prescaler_reg[4]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y43    prescaler_reg[5]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y43    prescaler_reg[6]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y43    prescaler_reg[7]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y44    prescaler_reg[8]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[16]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[1]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[2]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[3]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[4]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[5]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[6]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[7]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y44    prescaler_reg[8]/C
-Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y44    prescaler_reg[9]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[16]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[1]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[1]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[2]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[2]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[3]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y42    prescaler_reg[3]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[4]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[5]/C
-High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[6]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y43    prescaler_reg[0]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y45    prescaler_reg[10]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y45    prescaler_reg[11]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y46    prescaler_reg[12]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y46    prescaler_reg[13]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y46    prescaler_reg[14]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y46    prescaler_reg[15]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y47    prescaler_reg[16]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X22Y43    prescaler_reg[1]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y45    prescaler_reg[10]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y45    prescaler_reg[11]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[12]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[13]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[14]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[15]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y47    prescaler_reg[16]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[1]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[2]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[0]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y45    prescaler_reg[10]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y45    prescaler_reg[11]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[12]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[13]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[14]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y46    prescaler_reg[15]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y47    prescaler_reg[16]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[1]/C
+High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X22Y43    prescaler_reg[2]/C
 
 
 

@@ -10,29 +10,30 @@ use IEEE.NUMERIC_STD.ALL;
 -- Percent   Decimal   Input to module
 --  1%      = 0.010   =  10
 --  10%     = 0.100   =  100
+--  50%     = 0.500   =  500
 --  100%    = 1.000   =  1000
 
-entity pwm is
-    Port ( clk            : in  STD_LOGIC;
+entity pwm_dual is
+    Port ( clk            : in  std_logic;
 		   duty_cycle 	  : in  signed(10 downto 0);                   -- duty_cycle*1000 => 50.1% = 0.501 = 501
-           phase          : in  STD_LOGIC_VECTOR(1 downto 0) := "00";  -- 0 = 0degrees, 1 = 120 degrees, 2 = 240 degrees
-           pwm_high       : out STD_LOGIC;
-           pwm_low        : out STD_LOGIC
+           phase          : in  std_logic_vector(1 downto 0) := "00";  -- 0 = 0degrees, 1 = 120 degrees, 2 = 240 degrees
+           pwm_high       : out std_logic;
+           pwm_low        : out std_logic
            );
-end pwm;
+end pwm_dual;
 
-architecture Behavioral of pwm is
+architecture Behavioral of pwm_dual is
     -- Counting directions
-    constant DOWN 				: STD_LOGIC_VECTOR 	    := "00";
-	constant UP   				: STD_LOGIC_VECTOR	    := "01";
-	constant UNINITIALIZED		: STD_LOGIC_VECTOR 		:= "10";
+    constant DOWN 				: std_logic_vector 	     := "00";
+	constant UP   				: std_logic_vector	     := "01";
+	constant UNINITIALIZED		: std_logic_vector 		 := "10";
     
     -- Output levels
-    constant HIGH 				: STD_LOGIC 			 := '1';
-    constant LOW  				: STD_LOGIC 			 := '0';
+    constant HIGH 				: std_logic 			 := '1';
+    constant LOW  				: std_logic 			 := '0';
    
 	-- Deadtime
-	constant DEADTIME  			: signed(10 downto 0)   := "00000000101"; 
+	constant DEADTIME  			: signed(10 downto 0)    := "00000000101"; 
     
     -- Counter limits. When the count reaches the limit. The counting direction is changed.
     constant COUNT_MAX 			: signed(31 downto 0)    := x"000003E8";      -- 1,000
@@ -40,19 +41,17 @@ architecture Behavioral of pwm is
 	
 	-- 120 degrees phase shift
 	constant PHASE_120DEGREES	: signed(15 downto 0) 	 := x"029A";       -- (COUNT_MAX*2)/3 = 666
-	
-    
-    -- Counting direction (up or down)
-    signal dir 					: STD_LOGIC_VECTOR(1 downto 0) := UNINITIALIZED;
---    signal dir 					: STD_LOGIC_VECTOR(1 downto 0) := UP;
-    
+ 
     -- Counter that counts on every clock pulse 
-    signal counter 				: signed(31 downto 0) := x"00000000";
+    signal counter 				: signed(31 downto 0)    := x"00000000";
     
     -- Thresholds
-	signal threshold_high 		: signed(31 downto 0) := x"00000000";
-	signal threshold_low  		: signed(31 downto 0) := x"00000000";
+	signal threshold_high 		: signed(31 downto 0)    := x"00000000";
+	signal threshold_low  		: signed(31 downto 0)    := x"00000000";
 
+
+    -- Counting direction (up or down)
+    signal dir 					: std_logic_vector(1 downto 0) := UNINITIALIZED;
 begin
 
 ---- Find thresholds
@@ -106,10 +105,10 @@ end process;
 pwm_high_process:
 process(counter)
 begin
-        -- If counter is under threshold. 
-        -- Output: 0
         -- If counter is over threshold.
         -- Output: 1
+        -- If counter is under threshold. 
+        -- Output: 0
         if (counter > threshold_high) then
             pwm_high <= HIGH;
          else

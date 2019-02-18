@@ -16,7 +16,9 @@ entity top is
 end top;
 
 architecture Behavioral of top is
-    component pwm is
+    -- ************ Components ************
+    -- Dual PWM generator
+    component pwm_dual is
     Port (  
             clk             : in  STD_LOGIC;
             duty_cycle      : in  signed(10 downto 0);
@@ -24,11 +26,25 @@ architecture Behavioral of top is
             pwm_high        : out STD_LOGIC;
             pwm_low         : out STD_LOGIC
            );
-end component;
+    end component;
+    
+    -- Single PWM generator
+    component pwm_single is
+        Port ( 
+                clk          : in  std_logic;
+                duty_cycle   : in  signed(10 downto 0);
+                phase        : in  std_logic_vector (1 downto 0);
+                pwm          : out std_logic
+               );
+    end component;
+    
+    
+    -- ************ Signals ************
     -- Clock prescaler
     signal prescaler       : unsigned(31 downto 0) := x"00000000";
 begin
 
+-- Set row
 row <= "11111110";
 
 prescaling_process:
@@ -40,7 +56,7 @@ begin
 end process;
 
 -- Phase 1. 0 degrees phase shift
-generic_pwm0:pwm
+pwm_dual0:pwm_dual
 port map(
            clk            => prescaler(16),
            duty_cycle     => "00111110100", -- 50%
@@ -50,7 +66,7 @@ port map(
 );
 
 -- Phase 2. 120 degrees phase shift
-generic_pwm1:pwm
+pwm_dual1:pwm_dual
 port map(
            clk            => prescaler(16),
            duty_cycle     => "00111110100", -- 50%
@@ -60,13 +76,23 @@ port map(
 );
 
 -- Phase 3. 240 degrees phase shift
-generic_pwm2:pwm
+pwm_dual2:pwm_dual
 port map(
            clk            => prescaler(16),
            duty_cycle     => "00111110100", -- 50%
            phase          => "10",
            pwm_high       => red(4),
            pwm_low        => red(5)
+);
+
+
+-- Single pwm
+pwm_single0:pwm_single
+port map(
+    clk          => prescaler(15),
+    duty_cycle   => "00111110100",
+    phase        => "00",
+    pwm          => red(7)
 );
 
 end Behavioral;
