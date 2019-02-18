@@ -21,7 +21,9 @@ entity pwm_dual is
 		   duty_cycle 	  : in  signed(10 downto 0);                    -- duty_cycle*1000 => 50.1% = 0.501 = 501
            phase          : in  std_logic_vector(1 downto 0) := "00";   -- 0 = 0degrees, 1 = 120 degrees, 2 = 240 degrees
            pwm_high       : out std_logic;                              -- Output PWM high signal
-           pwm_low        : out std_logic                               -- Output PWM low signal
+           pwm_low        : out std_logic;                              -- Output PWM low signal
+           pwm_high_middle: out std_logic;                              -- Outputs a pulse on the middle of the high-side PWM
+           pwm_low_middle : out std_logic                               -- Outputs a pulse on the middle of the low-side PWM
            );
 end pwm_dual;
 
@@ -91,14 +93,19 @@ begin
             counter <= counter - 1;    
         end if;
         
-        -- Check counter limits
+        -- Check counter limits and control the PWM signal pulses 
+        pwm_low_middle <= LOW;
         if counter <= COUNT_MIN then
             -- If min is reached. Change direction
             dir <= UP;
+            pwm_low_middle <= HIGH;
         end if;
+        
+        pwm_high_middle <= LOW;
         if counter >= COUNT_MAX then
             -- If max is reached. Change direction
             dir <= DOWN;
+            pwm_high_middle <= HIGH;
         end if;   
             
     end if;

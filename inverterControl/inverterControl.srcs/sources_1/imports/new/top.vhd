@@ -21,11 +21,13 @@ architecture Behavioral of top is
     -- Dual PWM generator
     component pwm_dual is
     Port (  
-            clk             : in  STD_LOGIC;
+            clk             : in  std_logic;
             duty_cycle      : in  signed(10 downto 0);
-            phase           : in  STD_LOGIC_VECTOR(1 downto 0);
-            pwm_high        : out STD_LOGIC;
-            pwm_low         : out STD_LOGIC
+            phase           : in  std_logic_vector(1 downto 0);
+            pwm_high        : out std_logic;
+            pwm_low         : out std_logic;
+            pwm_high_middle : out std_logic;
+            pwm_low_middle  : out std_logic
            );
     end component;
     
@@ -85,7 +87,9 @@ port map(
            duty_cycle     => "00111110100", -- 50%
            phase          => "00",
            pwm_high       => red(0),
-           pwm_low        => red(1)
+           pwm_low        => red(1),
+           pwm_high_middle=> blue(0),
+           pwm_low_middle => blue(1)
 );
 
 -- Phase 2. 120 degrees phase shift
@@ -95,7 +99,9 @@ port map(
            duty_cycle     => "00111110100", -- 50%
            phase          => "01",
            pwm_high       => red(2),
-           pwm_low        => red(3)
+           pwm_low        => red(3),
+           pwm_high_middle=> blue(2),
+           pwm_low_middle => blue(3)
 );
 
 -- Phase 3. 240 degrees phase shift
@@ -105,7 +111,9 @@ port map(
            duty_cycle     => "00111110100", -- 50%
            phase          => "10",
            pwm_high       => red(4),
-           pwm_low        => red(5)
+           pwm_low        => red(5),
+           pwm_high_middle=> blue(4),
+           pwm_low_middle => blue(5)
 );
 
 
