@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Mon Feb 18 08:39:58 2019
+| Date         : Mon Feb 18 09:52:43 2019
 | Host         : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |     7 |
-| Unused register locations in slices containing registers |    15 |
+| Number of unique control sets                            |     5 |
+| Unused register locations in slices containing registers |     8 |
 +----------------------------------------------------------+-------+
 
 
@@ -34,9 +34,8 @@ Table of Contents
 +--------+--------------+
 | Fanout | Control Sets |
 +--------+--------------+
-|      2 |            1 |
 |      6 |            1 |
-|    16+ |            5 |
+|    16+ |            4 |
 +--------+--------------+
 
 
@@ -46,28 +45,26 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              25 |            9 |
+| No           | No                    | No                     |              32 |           10 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              96 |           29 |
+| Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              32 |            8 |
+| Yes          | Yes                   | No                     |              96 |           27 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------+----------------------------------+--------------------------------+------------------+----------------+
-|         Clock Signal        |           Enable Signal          |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
-+-----------------------------+----------------------------------+--------------------------------+------------------+----------------+
-|  clk_BUFG                   |                                  |                                |                1 |              2 |
-|  counter_reg[31]_i_3__1_n_0 |                                  |                                |                3 |              6 |
-|  clk_8ns_IBUF_BUFG          |                                  |                                |                5 |             17 |
-|  counter_reg[31]_i_3__1_n_0 | pwm_dual1/counter[31]_i_1__0_n_0 |                                |                9 |             32 |
-|  counter_reg[31]_i_3__1_n_0 | pwm_dual2/counter[31]_i_1__1_n_0 |                                |                9 |             32 |
-|  counter_reg[31]_i_3__1_n_0 | pwm_dual0/counter[31]_i_1_n_0    |                                |               11 |             32 |
-|  clk_BUFG                   | pwm_single0/counter[0]_i_2_n_0   | pwm_single0/counter[0]_i_1_n_0 |                8 |             32 |
-+-----------------------------+----------------------------------+--------------------------------+------------------+----------------+
++--------------------+----------------------------------+-------------------------------+------------------+----------------+
+|    Clock Signal    |           Enable Signal          |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
++--------------------+----------------------------------+-------------------------------+------------------+----------------+
+|  pwm_freq_BUFG     |                                  |                               |                3 |              6 |
+|  clk_8ns_IBUF_BUFG |                                  |                               |                7 |             26 |
+|  pwm_freq_BUFG     | pwm_dual1/counter[31]_i_2__0_n_0 | pwm_dual1/counter[31]_i_1_n_0 |                9 |             32 |
+|  pwm_freq_BUFG     | pwm_dual0/counter[31]_i_2_n_0    | pwm_dual0/counter[31]_i_1_n_0 |                9 |             32 |
+|  pwm_freq_BUFG     | pwm_dual2/counter[31]_i_2__1_n_0 | pwm_dual2/counter[31]_i_1_n_0 |                9 |             32 |
++--------------------+----------------------------------+-------------------------------+------------------+----------------+
 
 
