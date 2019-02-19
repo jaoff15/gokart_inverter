@@ -113,7 +113,7 @@ end process;
 
 
 
--- Process that controls the PWMs.
+-- Process that controls the high-side PWM.
 pwm_high_process:
 process(counter)
 begin
@@ -126,7 +126,12 @@ begin
          else
             pwm_high <= LOW;
         end if;
-        
+end process;
+
+-- Process that controls the low-side PWM
+pwm_low_process:
+process(counter)
+begin
         -- If counter is under threshold. 
         -- Output: 1
         -- If counter is over threshold.
@@ -137,6 +142,5 @@ begin
             pwm_low <= LOW;
         end if;
 end process;
-
 
 end Behavioral;
