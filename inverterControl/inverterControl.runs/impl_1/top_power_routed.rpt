@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Mon Feb 18 11:20:24 2019
+| Date             : Fri Feb 22 09:52:02 2019
 | Host             : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.142        |
+| Total On-Chip Power (W)  | 0.143        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.049        |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |      612 |       --- |             --- |
-|   LUT as Logic |     0.004 |      300 |     17600 |            1.70 |
+| Slice Logic    |     0.004 |      606 |       --- |             --- |
+|   LUT as Logic |     0.004 |      302 |     17600 |            1.72 |
 |   CARRY4       |    <0.001 |       77 |      4400 |            1.75 |
-|   Register     |    <0.001 |      125 |     35200 |            0.36 |
+|   Register     |    <0.001 |      119 |     35200 |            0.34 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   F7/F8 Muxes  |    <0.001 |        3 |     17600 |            0.02 |
 |   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |     0.003 |      210 |       --- |             --- |
+| Signals        |     0.003 |      204 |       --- |             --- |
 | I/O            |     0.041 |       37 |       100 |           37.00 |
 | Static Power   |     0.093 |          |           |                 |
-| Total          |     0.142 |          |           |                 |
+| Total          |     0.143 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -151,7 +151,7 @@ Table of Contents
 +-------------+-----------+
 | top         |     0.049 |
 |   pwm_dual0 |     0.002 |
-|   pwm_dual1 |     0.002 |
+|   pwm_dual1 |     0.003 |
 |   pwm_dual2 |     0.002 |
 +-------------+-----------+
 

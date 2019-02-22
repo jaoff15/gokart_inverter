@@ -39,6 +39,7 @@ architecture Behavioral of pwm_single is
     
     -- Threshold  change between high and low in the pwm
 	signal threshold 		    : signed(31 downto 0) := x"00000000";
+
 begin
 
 -- Set threshold for PWM to go high
@@ -53,37 +54,33 @@ begin
         if state = UNINITIALIZED then
             -- Set conter start value
             counter(10 downto 0) <= phase;
-            -- Begin counting up
+            -- Set state to counting up
             state <= UP;
+        end if;
            
-        elsif state = UP then
-            -- Count up
+        -- Count up
+        if state = UP then
             counter <= counter + 1;
         end if;
-
         
-        -- Check counter limits
-        if counter >= COUNT_MAX then
+        
+        
+        
+       -- Change the counting direction if the counting limit is reached
+       if counter >= COUNT_MAX then
             counter <= COUNT_MIN;
-        end if;   
-            
+        end if;  
     end if;
 end process;
 
 
--- Process that controls the PWM.
-pwm_process:
-process(counter)
-begin
-        -- If counter is over threshold.
-        -- Output: 1
-        -- If counter is under threshold. 
-        -- Output: 0
-        if (counter > threshold) then
-            pwm <= HIGH;
-         else
-            pwm <= LOW;
-        end if;
-end process;
+
+-- Control of the PWM.
+-- If counter is over threshold.
+-- Output: 1
+-- If counter is under threshold. 
+-- Output: 0
+pwm <= HIGH when (counter > threshold) else LOW; 
+
 
 end Behavioral;

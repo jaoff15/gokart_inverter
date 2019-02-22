@@ -1,7 +1,4 @@
 
-
--- Module that makes a PWM
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -44,9 +41,6 @@ architecture Behavioral of pwm_dual is
     constant COUNT_MAX 			: signed(31 downto 0)    := x"000003E8";      -- 1,000
     constant COUNT_MIN 			: signed(31 downto 0)    := x"00000000";      -- 0
 	
-	-- 120 degrees phase shift
-	constant PHASE_120DEGREES	: signed(15 downto 0) 	 := x"029A";          -- (COUNT_MAX*2)/3 = 666
- 
     -- Counter that counts on every clock pulse 
     signal counter 				: signed(31 downto 0)    := x"00000000";
     
@@ -68,17 +62,20 @@ counter_process:
 process (clk, counter)
 begin
     if rising_edge(clk) then
-        -- If direction is uninitialized then initialize it by giving it the offset specified by the phase inputtet to the module.
+        -- Initialize the counter with a phase and a counting direction
         if dir = UNINITIALIZED then
-            dir <= UP;
+            -- 00 => 0 degrees phase shift. Add 0 degrees
             if phase = "00" then
-                -- 00 => 0 degrees phase shift. Add 0 degrees
                 counter <= x"00000000";
+                dir <= UP;
+            
+            -- 01 => 120 degrees of phase shift. Add 120 degrees
             elsif phase = "01" then
-                -- 01 => 120 degrees of phase shift. Add 120 degrees
                 counter <= x"0000029A";  -- COUNT_MAX*3/3 = 666
+                dir <= UP;
+            
+            -- 10 => 240 degrees of phase shift. Add 240 degrees of phase shift
             elsif phase = "10" then
-                -- 10 => 240 degrees of phase shift. Add 240 degrees of phase shift
                 counter <= x"0000014D"; -- (COUNT_MAX*2/(2/3))-COUNT_MAX = 333
                 dir <= DOWN;
             end if;
@@ -88,59 +85,46 @@ begin
         if dir = UP then
             counter <= counter + 1;
         end if;
+        
         -- Count down
         if dir = DOWN then
-            counter <= counter - 1;    
+            counter <= counter - 1;
         end if;
         
-        -- Check counter limits and control the PWM signal pulses 
-        pwm_low_middle <= LOW;
+        -- Change the counting direction if a counting limit is reached
+        -- If minimum limit is reached. Change direction
         if counter <= COUNT_MIN then
-            -- If min is reached. Change direction
             dir <= UP;
-            pwm_low_middle <= HIGH;
         end if;
-        
-        pwm_high_middle <= LOW;
+       
+        -- If maximum limit is reached. Change direction
         if counter >= COUNT_MAX then
-            -- If max is reached. Change direction
             dir <= DOWN;
-            pwm_high_middle <= HIGH;
-        end if;   
-            
+        end if;    
     end if;
 end process;
 
 
+-- Control of the high side PWM
+-- If counter is over threshold.
+-- Output: 1
+-- If counter is under threshold. 
+-- Output: 0
+pwm_high <= HIGH when (counter > threshold_high) else LOW;
 
--- Process that controls the high-side PWM.
-pwm_high_process:
-process(counter)
-begin
-        -- If counter is over threshold.
-        -- Output: 1
-        -- If counter is under threshold. 
-        -- Output: 0
-        if (counter > threshold_high) then
-            pwm_high <= HIGH;
-         else
-            pwm_high <= LOW;
-        end if;
-end process;
+-- Control of the low side PWM
+-- If counter is under threshold. 
+-- Output: 1
+-- If counter is over threshold.
+-- Output: 0
+pwm_low  <= HIGH when (counter < threshold_low) else LOW;
 
--- Process that controls the low-side PWM
-pwm_low_process:
-process(counter)
-begin
-        -- If counter is under threshold. 
-        -- Output: 1
-        -- If counter is over threshold.
-        -- Output: 0
-        if (counter < threshold_low) then
-            pwm_low <= HIGH;
-        else
-            pwm_low <= LOW;
-        end if;
-end process;
+
+-- Output a pulse in the middle of the high PWM signal
+pwm_high_middle <= HIGH when (counter >= COUNT_MAX) else LOW;
+
+-- Output a pulse in the middle of the low PWM signal
+pwm_low_middle <= HIGH when (counter <= COUNT_MIN) else LOW;
+
 
 end Behavioral;
