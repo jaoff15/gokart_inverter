@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Fri Feb 22 09:52:02 2019
+| Date         : Fri Feb 22 10:05:18 2019
 | Host         : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
@@ -52,45 +52,45 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 102 register/latch pins with no clock driven by root clock pin: sw[0] (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: sw[0] (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: sw[1] (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: sw[1] (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: sw[2] (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: sw[2] (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: sw[3] (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: sw[3] (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[10]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[10]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[11]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[11]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[12]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[12]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[13]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[13]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[14]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[14]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[15]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[15]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[16]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[16]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[1]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[1]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[2]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[2]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[3]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[3]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[4]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[4]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[5]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[5]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[6]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[6]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[7]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[7]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[8]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[8]/Q (HIGH)
 
- There are 102 register/latch pins with no clock driven by root clock pin: prescaler_reg[9]/Q (HIGH)
+ There are 170 register/latch pins with no clock driven by root clock pin: prescaler_reg[9]/Q (HIGH)
 
 
 2. checking constant_clock
@@ -105,7 +105,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 294 pins that are not constrained for maximum delay. (HIGH)
+ There are 490 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -119,7 +119,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 12 ports with no output delay specified. (HIGH)
+ There are 14 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -250,12 +250,12 @@ Slack (MET) :             5.663ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -277,12 +277,12 @@ Slack (MET) :             5.663ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.579    12.971    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.579    12.971    clk_IBUF_BUFG
     SLICE_X42Y43         FDRE                                         r  prescaler_reg[16]/C
                          clock pessimism              0.429    13.400    
                          clock uncertainty           -0.035    13.365    
@@ -317,12 +317,12 @@ Slack (MET) :             5.675ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -341,12 +341,12 @@ Slack (MET) :             5.675ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[13]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -381,12 +381,12 @@ Slack (MET) :             5.683ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -405,12 +405,12 @@ Slack (MET) :             5.683ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[15]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -445,12 +445,12 @@ Slack (MET) :             5.759ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -469,12 +469,12 @@ Slack (MET) :             5.759ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[14]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -509,12 +509,12 @@ Slack (MET) :             5.779ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -533,12 +533,12 @@ Slack (MET) :             5.779ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[12]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -573,12 +573,12 @@ Slack (MET) :             5.792ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -594,12 +594,12 @@ Slack (MET) :             5.792ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[9]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -634,12 +634,12 @@ Slack (MET) :             5.800ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -655,12 +655,12 @@ Slack (MET) :             5.800ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[11]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -695,12 +695,12 @@ Slack (MET) :             5.876ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -716,12 +716,12 @@ Slack (MET) :             5.876ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[10]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -756,12 +756,12 @@ Slack (MET) :             5.896ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[7]/Q
@@ -777,12 +777,12 @@ Slack (MET) :             5.896ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.578    12.970    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.578    12.970    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[8]/C
                          clock pessimism              0.429    13.399    
                          clock uncertainty           -0.035    13.364    
@@ -817,12 +817,12 @@ Slack (MET) :             5.950ns  (required time - arrival time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           2.076     3.567    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.755     5.423    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.491     1.491 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.076     3.567    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.668 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.755     5.423    clk_IBUF_BUFG
     SLICE_X42Y39         FDRE                                         r  prescaler_reg[3]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y39         FDRE (Prop_fdre_C_Q)         0.518     5.941 r  prescaler_reg[3]/Q
@@ -838,12 +838,12 @@ Slack (MET) :             5.950ns  (required time - arrival time)
 
                          (clock sys_clk_pin rise edge)
                                                       8.000     8.000 r  
-    L16                                               0.000     8.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     8.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           1.880    11.301    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          1.577    12.969    clk_8ns_IBUF_BUFG
+    L16                                               0.000     8.000 r  clk (IN)
+                         net (fo=0)                   0.000     8.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           1.880    11.301    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.392 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          1.577    12.969    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[5]/C
                          clock pessimism              0.429    13.398    
                          clock uncertainty           -0.035    13.363    
@@ -879,12 +879,12 @@ Slack (MET) :             0.265ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[10]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y41         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[10]/Q
@@ -897,12 +897,12 @@ Slack (MET) :             0.265ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[10]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y41         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[10]
@@ -931,12 +931,12 @@ Slack (MET) :             0.267ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[14]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y42         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[14]/Q
@@ -949,12 +949,12 @@ Slack (MET) :             0.267ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[14]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y42         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[14]
@@ -983,12 +983,12 @@ Slack (MET) :             0.267ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[6]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[6]/Q
@@ -1001,12 +1001,12 @@ Slack (MET) :             0.267ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[6]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y40         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[6]
@@ -1035,12 +1035,12 @@ Slack (MET) :             0.301ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[10]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y41         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[10]/Q
@@ -1053,12 +1053,12 @@ Slack (MET) :             0.301ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[11]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y41         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[11]
@@ -1087,12 +1087,12 @@ Slack (MET) :             0.303ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[14]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y42         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[14]/Q
@@ -1105,12 +1105,12 @@ Slack (MET) :             0.303ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y42         FDRE                                         r  prescaler_reg[15]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y42         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[15]
@@ -1139,12 +1139,12 @@ Slack (MET) :             0.303ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[6]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[6]/Q
@@ -1157,12 +1157,12 @@ Slack (MET) :             0.303ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[7]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y40         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[7]
@@ -1191,12 +1191,12 @@ Slack (MET) :             0.308ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.592     1.504    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.592     1.504    clk_IBUF_BUFG
     SLICE_X42Y39         FDRE                                         r  prescaler_reg[0]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y39         FDRE (Prop_fdre_C_Q)         0.164     1.668 f  prescaler_reg[0]/Q
@@ -1211,12 +1211,12 @@ Slack (MET) :             0.308ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.861     2.020    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.861     2.020    clk_IBUF_BUFG
     SLICE_X42Y39         FDRE                                         r  prescaler_reg[0]/C
                          clock pessimism             -0.516     1.504    
     SLICE_X42Y39         FDRE (Hold_fdre_C_D)         0.134     1.638    prescaler_reg[0]
@@ -1245,12 +1245,12 @@ Slack (MET) :             0.319ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[5]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y40         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[5]/Q
@@ -1263,12 +1263,12 @@ Slack (MET) :             0.319ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y40         FDRE                                         r  prescaler_reg[5]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y40         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[5]
@@ -1286,7 +1286,7 @@ Slack (MET) :             0.321ns  (arrival time - required time)
   Path Group:             sys_clk_pin
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
-  Data Path Delay:        0.455ns  (logic 0.275ns (60.444%)  route 0.180ns (39.556%))
+  Data Path Delay:        0.455ns  (logic 0.275ns (60.494%)  route 0.180ns (39.506%))
   Logic Levels:           1  (CARRY4=1)
   Clock Path Skew:        0.000ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    2.021ns
@@ -1297,36 +1297,36 @@ Slack (MET) :             0.321ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.593     1.505    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.593     1.505    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[9]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y41         FDRE (Prop_fdre_C_Q)         0.164     1.669 r  prescaler_reg[9]/Q
-                         net (fo=2, routed)           0.180     1.849    data7
+                         net (fo=2, routed)           0.180     1.848    data7
     SLICE_X42Y41         CARRY4 (Prop_carry4_S[1]_O[1])
-                                                      0.111     1.960 r  prescaler_reg[8]_i_1/O[1]
-                         net (fo=1, routed)           0.000     1.960    prescaler_reg[8]_i_1_n_6
+                                                      0.111     1.959 r  prescaler_reg[8]_i_1/O[1]
+                         net (fo=1, routed)           0.000     1.959    prescaler_reg[8]_i_1_n_6
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[9]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.862     2.021    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.862     2.021    clk_IBUF_BUFG
     SLICE_X42Y41         FDRE                                         r  prescaler_reg[9]/C
                          clock pessimism             -0.516     1.505    
     SLICE_X42Y41         FDRE (Hold_fdre_C_D)         0.134     1.639    prescaler_reg[9]
   -------------------------------------------------------------------
                          required time                         -1.639    
-                         arrival time                           1.960    
+                         arrival time                           1.959    
   -------------------------------------------------------------------
                          slack                                  0.321    
 
@@ -1349,12 +1349,12 @@ Slack (MET) :             0.322ns  (arrival time - required time)
   -------------------------------------------------------------------    -------------------
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.627     0.886    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.592     1.504    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.627     0.886    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.912 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.592     1.504    clk_IBUF_BUFG
     SLICE_X42Y39         FDRE                                         r  prescaler_reg[1]/C
   -------------------------------------------------------------------    -------------------
     SLICE_X42Y39         FDRE (Prop_fdre_C_Q)         0.164     1.668 r  prescaler_reg[1]/Q
@@ -1367,12 +1367,12 @@ Slack (MET) :             0.322ns  (arrival time - required time)
 
                          (clock sys_clk_pin rise edge)
                                                       0.000     0.000 r  
-    L16                                               0.000     0.000 r  clk_8ns (IN)
-                         net (fo=0)                   0.000     0.000    clk_8ns
-    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_8ns_IBUF_inst/O
-                         net (fo=1, routed)           0.683     1.130    clk_8ns_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_8ns_IBUF_BUFG_inst/O
-                         net (fo=17, routed)          0.861     2.020    clk_8ns_IBUF_BUFG
+    L16                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    L16                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           0.683     1.130    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.159 r  clk_IBUF_BUFG_inst/O
+                         net (fo=17, routed)          0.861     2.020    clk_IBUF_BUFG
     SLICE_X42Y39         FDRE                                         r  prescaler_reg[1]/C
                          clock pessimism             -0.516     1.504    
     SLICE_X42Y39         FDRE (Hold_fdre_C_D)         0.134     1.638    prescaler_reg[1]
@@ -1391,39 +1391,39 @@ Pulse Width Checks
 Clock Name:         sys_clk_pin
 Waveform(ns):       { 0.000 4.000 }
 Period(ns):         8.000
-Sources:            { clk_8ns }
+Sources:            { clk }
 
 Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
-Min Period        n/a     BUFG/I   n/a            2.155         8.000       5.845      BUFGCTRL_X0Y16  clk_8ns_IBUF_BUFG_inst/I
+Min Period        n/a     BUFG/I   n/a            2.155         8.000       5.845      BUFGCTRL_X0Y16  clk_IBUF_BUFG_inst/I
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y39    prescaler_reg[0]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y41    prescaler_reg[10]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y41    prescaler_reg[11]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y42    prescaler_reg[12]/C
-Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y41    prescaler_reg[9]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y42    prescaler_reg[13]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y42    prescaler_reg[14]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y42    prescaler_reg[15]/C
 Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y43    prescaler_reg[16]/C
+Min Period        n/a     FDRE/C   n/a            1.000         8.000       7.000      SLICE_X42Y39    prescaler_reg[1]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y39    prescaler_reg[0]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y41    prescaler_reg[10]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y41    prescaler_reg[11]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[12]/C
-Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y41    prescaler_reg[9]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[13]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[14]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[15]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y39    prescaler_reg[1]/C
 Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y39    prescaler_reg[2]/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y39    prescaler_reg[3]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y39    prescaler_reg[0]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y41    prescaler_reg[10]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y41    prescaler_reg[11]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[12]/C
-High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y41    prescaler_reg[9]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[13]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[14]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y42    prescaler_reg[15]/C
 High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y43    prescaler_reg[16]/C
 High Pulse Width  Fast    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y43    prescaler_reg[16]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         4.000       3.500      SLICE_X42Y39    prescaler_reg[1]/C
 
 
 

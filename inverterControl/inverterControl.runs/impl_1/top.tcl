@@ -75,7 +75,7 @@ set rc [catch {
   set_property ip_output_repo /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1/top.dcp
-  read_xdc /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc
+  read_xdc /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc
   link_design -top top -part xc7z010clg400-1
   close_msg_db -file init_design.pb
 } RESULT]

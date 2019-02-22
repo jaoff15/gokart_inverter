@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Fri Feb 22 09:52:02 2019
+| Date             : Fri Feb 22 10:05:18 2019
 | Host             : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.143        |
+| Total On-Chip Power (W)  | 0.147        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.049        |
+| Dynamic (W)              | 0.053        |
 | Device Static (W)        | 0.093        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 83.4         |
-| Junction Temperature (C) | 26.6         |
+| Max Ambient (C)          | 83.3         |
+| Junction Temperature (C) | 26.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |      606 |       --- |             --- |
-|   LUT as Logic |     0.004 |      302 |     17600 |            1.72 |
-|   CARRY4       |    <0.001 |       77 |      4400 |            1.75 |
-|   Register     |    <0.001 |      119 |     35200 |            0.34 |
+| Slice Logic    |     0.005 |      856 |       --- |             --- |
+|   LUT as Logic |     0.004 |      381 |     17600 |            2.16 |
+|   CARRY4       |    <0.001 |      109 |      4400 |            2.48 |
+|   Register     |    <0.001 |      187 |     35200 |            0.53 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   F7/F8 Muxes  |    <0.001 |        3 |     17600 |            0.02 |
-|   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |     0.003 |      204 |       --- |             --- |
-| I/O            |     0.041 |       37 |       100 |           37.00 |
+|   Others       |     0.000 |       12 |       --- |             --- |
+| Signals        |     0.003 |      326 |       --- |             --- |
+| I/O            |     0.045 |       37 |       100 |           37.00 |
 | Static Power   |     0.093 |          |           |                 |
-| Total          |     0.143 |          |           |                 |
+| Total          |     0.147 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.012 |       0.008 |      0.004 |
+| Vccint    |       1.000 |     0.012 |       0.009 |      0.004 |
 | Vccaux    |       1.800 |     0.007 |       0.002 |      0.005 |
-| Vcco33    |       3.300 |     0.013 |       0.012 |      0.001 |
+| Vcco33    |       3.300 |     0.014 |       0.013 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -133,11 +133,11 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------------+---------+-----------------+
-| Clock       | Domain  | Constraint (ns) |
-+-------------+---------+-----------------+
-| sys_clk_pin | clk_8ns |             8.0 |
-+-------------+---------+-----------------+
++-------------+--------+-----------------+
+| Clock       | Domain | Constraint (ns) |
++-------------+--------+-----------------+
+| sys_clk_pin | clk    |             8.0 |
++-------------+--------+-----------------+
 
 
 3. Detailed Reports
@@ -149,9 +149,9 @@ Table of Contents
 +-------------+-----------+
 | Name        | Power (W) |
 +-------------+-----------+
-| top         |     0.049 |
+| top         |     0.053 |
 |   pwm_dual0 |     0.002 |
-|   pwm_dual1 |     0.003 |
+|   pwm_dual1 |     0.002 |
 |   pwm_dual2 |     0.002 |
 +-------------+-----------+
 

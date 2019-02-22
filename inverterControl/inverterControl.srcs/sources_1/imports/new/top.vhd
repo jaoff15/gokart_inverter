@@ -7,7 +7,7 @@ use ieee.NUMERIC_STD.all;
 
 entity top is
     Port (  
-            clk_8ns     : in  STD_LOGIC;
+            clk         : in  STD_LOGIC;
             sw          : in  std_logic_vector (3 downto 0);
             red         : out STD_LOGIC_VECTOR (7 downto 0);
             green       : out STD_LOGIC_VECTOR (7 downto 0);
@@ -73,9 +73,9 @@ with sw select
                  prescaler(1) when "1111";
 
 prescaling_process:
-process (clk_8ns)
+process (clk)
 begin
-   if rising_edge(clk_8ns) then
+   if rising_edge(clk) then
         prescaler <= prescaler + 1;
    end if;
 end process;
@@ -117,20 +117,20 @@ port map(
 );
 
 
----- Single pwm
---pwm_single0:pwm_single
---port map(
---    clk          => pwm_freq,
---    duty_cycle   => "00111110100",
---    phase        => "00000000000",
---    pwm          => red(7)
---);
---pwm_single1:pwm_single
---port map(
---    clk          => pwm_freq,
---    duty_cycle   => "00111110100",
---    phase        => "01000000000",
---    pwm          => red(6)
---);
+-- Single pwm
+pwm_single0:pwm_single
+port map(
+    clk          => pwm_freq,
+    duty_cycle   => "00111110100",
+    phase        => "00000000000",
+    pwm          => red(7)
+);
+pwm_single1:pwm_single
+port map(
+    clk          => pwm_freq,
+    duty_cycle   => "00111110100",
+    phase        => "01000000000",
+    pwm          => red(6)
+);
 
 end Behavioral;

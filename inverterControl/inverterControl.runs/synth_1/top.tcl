@@ -32,6 +32,7 @@ set_property ip_output_repo /home/offersen/Programs/vivadoprojects/gokart_invert
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd
+  /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_single.vhd
   /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -42,8 +43,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc
-set_property used_in_implementation false [get_files /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc]
+read_xdc /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc
+set_property used_in_implementation false [get_files /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

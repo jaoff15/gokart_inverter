@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri Feb 22 09:50:20 2019
-# Process ID: 11160
+# Start of session at: Fri Feb 22 10:03:33 2019
+# Process ID: 13384
 # Current directory: /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1/top.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11190 
+INFO: Helper process launched with PID 13407 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1431.227 ; gain = 76.906 ; free physical = 1121 ; free virtual = 5377
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1431.680 ; gain = 87.906 ; free physical = 1193 ; free virtual = 5416
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:19]
 INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual0' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:84]
@@ -25,8 +25,12 @@ INFO: [Synth 8-638] synthesizing module 'pwm_dual' [/home/offersen/Programs/viva
 INFO: [Synth 8-256] done synthesizing module 'pwm_dual' (1#1) [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:27]
 INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual1' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:96]
 INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual2' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:108]
+INFO: [Synth 8-3491] module 'pwm_single' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_single.vhd:12' bound to instance 'pwm_single0' of component 'pwm_single' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:121]
+INFO: [Synth 8-638] synthesizing module 'pwm_single' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_single.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'pwm_single' (2#1) [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_single.vhd:21]
+INFO: [Synth 8-3491] module 'pwm_single' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_single.vhd:12' bound to instance 'pwm_single1' of component 'pwm_single' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:128]
 WARNING: [Synth 8-3848] Net green in module/entity top does not have driver. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:13]
-INFO: [Synth 8-256] done synthesizing module 'top' (2#1) [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'top' (3#1) [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:19]
 WARNING: [Synth 8-3917] design top has port row[7] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[6] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[5] driven by constant 1
@@ -35,8 +39,6 @@ WARNING: [Synth 8-3917] design top has port row[3] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[2] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[1] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[0] driven by constant 0
-WARNING: [Synth 8-3331] design top has unconnected port red[7]
-WARNING: [Synth 8-3331] design top has unconnected port red[6]
 WARNING: [Synth 8-3331] design top has unconnected port green[7]
 WARNING: [Synth 8-3331] design top has unconnected port green[6]
 WARNING: [Synth 8-3331] design top has unconnected port green[5]
@@ -48,7 +50,7 @@ WARNING: [Synth 8-3331] design top has unconnected port green[0]
 WARNING: [Synth 8-3331] design top has unconnected port blue[7]
 WARNING: [Synth 8-3331] design top has unconnected port blue[6]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1475.977 ; gain = 121.656 ; free physical = 1132 ; free virtual = 5389
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.430 ; gain = 132.656 ; free physical = 1216 ; free virtual = 5428
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -61,71 +63,73 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1475.977 ; gain = 121.656 ; free physical = 1132 ; free virtual = 5389
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.430 ; gain = 132.656 ; free physical = 1216 ; free virtual = 5428
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1475.977 ; gain = 121.656 ; free physical = 1132 ; free virtual = 5389
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.430 ; gain = 132.656 ; free physical = 1216 ; free virtual = 5428
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc]
-WARNING: [Vivado 12-584] No ports matched 'btn[0]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:14]
+Parsing XDC File [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'btn[0]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:20]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[1]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'btn[1]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:21]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[2]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'btn[2]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:22]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[3]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:17]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'btn[3]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:23]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:27]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:28]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:23]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:29]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:24]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc:30]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Programs/RGB_Matrix_constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Finished Parsing XDC File [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.625 ; gain = 0.000 ; free physical = 880 ; free virtual = 5137
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.078 ; gain = 0.000 ; free physical = 964 ; free virtual = 5175
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.625 ; gain = 0.000 ; free physical = 881 ; free virtual = 5137
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.078 ; gain = 0.000 ; free physical = 964 ; free virtual = 5176
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.625 ; gain = 0.000 ; free physical = 881 ; free virtual = 5137
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.625 ; gain = 0.000 ; free physical = 881 ; free virtual = 5137
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.078 ; gain = 0.000 ; free physical = 964 ; free virtual = 5176
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.078 ; gain = 0.000 ; free physical = 964 ; free virtual = 5176
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 958 ; free virtual = 5215
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 1042 ; free virtual = 5253
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 958 ; free virtual = 5215
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 1042 ; free virtual = 5253
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 960 ; free virtual = 5217
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 1043 ; free virtual = 5255
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 951 ; free virtual = 5208
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 1035 ; free virtual = 5247
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -138,17 +142,18 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 6     
+	   2 Input     32 Bit       Adders := 8     
 	   2 Input     11 Bit       Adders := 3     
 +---Registers : 
-	               32 Bit    Registers := 3     
-	                2 Bit    Registers := 3     
+	               32 Bit    Registers := 5     
+	                2 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 6     
+	   2 Input     32 Bit        Muxes := 10    
+	   2 Input     11 Bit        Muxes := 2     
 	   2 Input     10 Bit        Muxes := 6     
 	   3 Input      2 Bit        Muxes := 3     
 	   5 Input      1 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 14    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -170,6 +175,17 @@ Detailed RTL Component Info :
 	   3 Input      2 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 4     
+Module pwm_single 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -186,6 +202,12 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "pwm_single0/state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pwm_single0/counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pwm_single1/state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pwm_single1/counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pwm_single1/counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pwm_single0/counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 WARNING: [Synth 8-3917] design top has port row[7] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[6] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[5] driven by constant 1
@@ -194,8 +216,6 @@ WARNING: [Synth 8-3917] design top has port row[3] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[2] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[1] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[0] driven by constant 0
-WARNING: [Synth 8-3331] design top has unconnected port red[7]
-WARNING: [Synth 8-3331] design top has unconnected port red[6]
 WARNING: [Synth 8-3331] design top has unconnected port green[7]
 WARNING: [Synth 8-3331] design top has unconnected port green[6]
 WARNING: [Synth 8-3331] design top has unconnected port green[5]
@@ -207,7 +227,7 @@ WARNING: [Synth 8-3331] design top has unconnected port green[0]
 WARNING: [Synth 8-3331] design top has unconnected port blue[7]
 WARNING: [Synth 8-3331] design top has unconnected port blue[6]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 939 ; free virtual = 5198
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 1024 ; free virtual = 5238
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -219,13 +239,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 828 ; free virtual = 5086
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 899 ; free virtual = 5112
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 827 ; free virtual = 5086
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -237,7 +257,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 896 ; free virtual = 5110
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -261,7 +281,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -274,7 +294,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -286,25 +306,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -321,52 +341,54 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    77|
+|2     |CARRY4 |   109|
 |3     |LUT1   |     7|
-|4     |LUT2   |   381|
-|5     |LUT3   |     1|
+|4     |LUT2   |   505|
+|5     |LUT3   |    23|
 |6     |LUT4   |     5|
 |7     |LUT6   |     4|
 |8     |MUXF7  |     2|
 |9     |MUXF8  |     1|
-|10    |FDRE   |   109|
+|10    |FDRE   |   177|
 |11    |FDSE   |    10|
 |12    |IBUF   |     5|
-|13    |OBUF   |    20|
-|14    |OBUFT  |    12|
+|13    |OBUF   |    22|
+|14    |OBUFT  |    10|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+------------+-----------+------+
-|      |Instance    |Module     |Cells |
-+------+------------+-----------+------+
-|1     |top         |           |   636|
-|2     |  pwm_dual0 |pwm_dual   |   189|
-|3     |  pwm_dual1 |pwm_dual_0 |   189|
-|4     |  pwm_dual2 |pwm_dual_1 |   189|
-+------+------------+-----------+------+
++------+--------------+-------------+------+
+|      |Instance      |Module       |Cells |
++------+--------------+-------------+------+
+|1     |top           |             |   882|
+|2     |  pwm_dual0   |pwm_dual     |   189|
+|3     |  pwm_dual1   |pwm_dual_0   |   189|
+|4     |  pwm_dual2   |pwm_dual_1   |   189|
+|5     |  pwm_single0 |pwm_single   |   123|
+|6     |  pwm_single1 |pwm_single_2 |   123|
++------+--------------+-------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.625 ; gain = 448.305 ; free physical = 826 ; free virtual = 5084
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.078 ; gain = 458.305 ; free physical = 897 ; free virtual = 5111
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1802.625 ; gain = 121.656 ; free physical = 883 ; free virtual = 5142
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.633 ; gain = 448.305 ; free physical = 883 ; free virtual = 5142
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1802.078 ; gain = 132.656 ; free physical = 953 ; free virtual = 5167
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.086 ; gain = 458.305 ; free physical = 953 ; free virtual = 5167
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 80 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 112 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.633 ; gain = 0.000 ; free physical = 824 ; free virtual = 5082
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.086 ; gain = 0.000 ; free physical = 893 ; free virtual = 5107
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-19 Infos, 49 Warnings, 8 Critical Warnings and 0 Errors encountered.
+31 Infos, 45 Warnings, 8 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1802.633 ; gain = 448.406 ; free physical = 879 ; free virtual = 5138
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.633 ; gain = 0.000 ; free physical = 879 ; free virtual = 5138
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1802.086 ; gain = 464.133 ; free physical = 949 ; free virtual = 5162
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.086 ; gain = 0.000 ; free physical = 949 ; free virtual = 5162
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 22 09:50:57 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 22 10:04:13 2019...
