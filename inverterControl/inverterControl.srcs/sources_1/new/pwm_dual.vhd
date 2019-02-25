@@ -1,7 +1,7 @@
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 -- Duty cycles
 -- Percent   Decimal   Input to module
@@ -11,11 +11,11 @@ use IEEE.NUMERIC_STD.ALL;
 --  100%    = 1.000   =  1000
 
 -- PWM frequency
--- 0Hz --> 125MHz/1000 = 125kHz
+-- 0Hz --> 125MHz/2000 = 62.5kHz
 
 entity pwm_dual is
     Port ( clk            : in  std_logic;                              -- Input clock
-		   duty_cycle 	  : in  signed(10 downto 0);                    -- duty_cycle*1000 => 50.1% = 0.501 = 501
+		   duty_cycle 	  : in  signed(10 downto 0);                    -- duty_cycle*1000. 501 => 0.501 = 50.1%
            phase          : in  std_logic_vector(1 downto 0) := "00";   -- 0 = 0degrees, 1 = 120 degrees, 2 = 240 degrees
            pwm_high       : out std_logic;                              -- Output PWM high signal
            pwm_low        : out std_logic;                              -- Output PWM low signal
@@ -35,7 +35,7 @@ architecture Behavioral of pwm_dual is
     constant LOW  				: std_logic 			 := '0';
    
 	-- Deadtime
-	constant DEADTIME  			: signed(10 downto 0)    := "00000000101";   -- 1/(Clk/1000)*deadtime = actual deadtime [s]
+	constant DEADTIME  			: signed(10 downto 0)    := "00000000101";   -- 1/(Clk/2000)*deadtime = actual deadtime [s]
     
     -- Counter limits. When the count reaches the limit. The counting direction is changed.
     constant COUNT_MAX 			: signed(31 downto 0)    := x"000003E8";      -- 1,000
