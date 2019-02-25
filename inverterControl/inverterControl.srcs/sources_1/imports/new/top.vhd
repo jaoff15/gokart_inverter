@@ -55,22 +55,22 @@ row <= "11111110";
 
 -- Select PWM frequency dependign 
 with sw select
-    pwm_freq <=  prescaler(16) when "0000",
-                 prescaler(15) when "0001", 
-                 prescaler(14) when "0010", 
-                 prescaler(13) when "0011",
-                 prescaler(12) when "0100",
-                 prescaler(11) when "0101", 
-                 prescaler(10) when "0110", 
-                 prescaler(9) when "0111",
-                 prescaler(8) when "1000",
-                 prescaler(7) when "1001", 
-                 prescaler(6) when "1010", 
-                 prescaler(5) when "1011",
-                 prescaler(4) when "1100",
-                 prescaler(3) when "1101", 
-                 prescaler(2) when "1110", 
-                 prescaler(1) when "1111";
+    pwm_freq <=  prescaler(15) when "0000",
+                 prescaler(14) when "0001", 
+                 prescaler(13) when "0010", 
+                 prescaler(12) when "0011",
+                 prescaler(11) when "0100",
+                 prescaler(10) when "0101", 
+                 prescaler(9) when "0110", 
+                 prescaler(8) when "0111",
+                 prescaler(7) when "1000",
+                 prescaler(6) when "1001", 
+                 prescaler(5) when "1010", 
+                 prescaler(4) when "1011",
+                 prescaler(3) when "1100",
+                 prescaler(2) when "1101", 
+                 prescaler(1) when "1110", 
+                 prescaler(0) when "1111";
 
 prescaling_process:
 process (clk)
@@ -86,10 +86,10 @@ port map(
            clk            => pwm_freq,
            duty_cycle     => "00111110100", -- 50%
            phase          => "00",
-           pwm_high       => red(0),
-           pwm_low        => red(1),
-           pwm_high_middle=> blue(0),
-           pwm_low_middle => blue(1)
+           pwm_high       => red(7),
+           pwm_low        => red(6),
+           pwm_high_middle=> green(0),
+           pwm_low_middle => green(1)
 );
 
 -- Phase 2. 120 degrees phase shift
@@ -98,10 +98,10 @@ port map(
            clk            => pwm_freq,
            duty_cycle     => "00111110100", -- 50%
            phase          => "01",
-           pwm_high       => red(2),
-           pwm_low        => red(3),
-           pwm_high_middle=> blue(2),
-           pwm_low_middle => blue(3)
+           pwm_high       => blue(7),
+           pwm_low        => green(2),
+           pwm_high_middle=> green(3),
+           pwm_low_middle => green(4)
 );
 
 -- Phase 3. 240 degrees phase shift
@@ -110,27 +110,12 @@ port map(
            clk            => pwm_freq,
            duty_cycle     => "00111110100", -- 50%
            phase          => "10",
-           pwm_high       => red(4),
-           pwm_low        => red(5),
-           pwm_high_middle=> blue(4),
-           pwm_low_middle => blue(5)
+           pwm_high       => blue(6),
+           pwm_low        => green(5),
+           pwm_high_middle=> green(6),
+           pwm_low_middle => green(7)
 );
 
 
--- Single pwm
-pwm_single0:pwm_single
-port map(
-    clk          => pwm_freq,
-    duty_cycle   => "00111110100",
-    phase        => "00000000000",
-    pwm          => red(7)
-);
-pwm_single1:pwm_single
-port map(
-    clk          => pwm_freq,
-    duty_cycle   => "00111110100",
-    phase        => "01000000000",
-    pwm          => red(6)
-);
 
 end Behavioral;

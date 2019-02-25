@@ -32,7 +32,6 @@ set_property ip_output_repo /home/offersen/Programs/vivadoprojects/gokart_invert
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd
-  /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_single.vhd
   /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
