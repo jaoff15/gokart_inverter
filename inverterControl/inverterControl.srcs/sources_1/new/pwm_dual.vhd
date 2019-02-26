@@ -35,7 +35,7 @@ architecture Behavioral of pwm_dual is
     constant LOW  				: std_logic 			 := '0';
    
 	-- Deadtime
-	constant DEADTIME  			: signed(10 downto 0)    := "00000000101";   -- 1/(Clk/2000)*deadtime = actual deadtime [s]
+	constant DEADTIME  			: signed(10 downto 0)    := "00001000000";   -- 1/(Clk/2000)*deadtime = actual deadtime [s]
     
     -- Counter limits. When the count reaches the limit. The counting direction is changed.
     constant COUNT_MAX 			: signed(31 downto 0)    := x"000003E8";      -- 1,000
@@ -52,9 +52,11 @@ architecture Behavioral of pwm_dual is
     signal dir 					: std_logic_vector(1 downto 0) := UNINITIALIZED;
 begin
 
----- Find thresholds
-threshold_high(10 downto 0) <= duty_cycle;
-threshold_low(10 downto 0)  <= threshold_high(10 downto 0) - DEADTIME;
+-- Find thresholds
+-- If the high threshold gets within MAX-DEADTIME then it is limits to MAX-DEADTIME. 
+-- This means that the PWM cant reach 100% but it can reach 0% 
+threshold_high(10 downto 0) <= duty_cycle when (duty_cycle < COUNT_MAX(10 downto 0) - DEADTIME) else COUNT_MAX(10 downto 0) - DEADTIME;
+threshold_low(10 downto 0)  <= threshold_high(10 downto 0) + DEADTIME;
 
 
 -- Counts on every clock pulse
@@ -92,13 +94,16 @@ begin
         end if;
         
         -- Change the counting direction if a counting limit is reached
+        -- The counter limits has a buffer of 1 so that the limit is reached in the same scan where the signal actually hits the 
+        -- limit. Otherwise this is delayed one cycle due to the delay between assigning a value to a signal and the
+        -- Value actually being written to the signal
         -- If minimum limit is reached. Change direction
-        if counter <= COUNT_MIN then
+        if counter <= COUNT_MIN + x"00000001" then
             dir <= UP;
         end if;
        
         -- If maximum limit is reached. Change direction
-        if counter >= COUNT_MAX then
+        if counter >= COUNT_MAX - x"00000001" then
             dir <= DOWN;
         end if;    
     end if;
@@ -110,14 +115,14 @@ end process;
 -- Output: 0
 -- If counter is under threshold. 
 -- Output: 1
-pwm_high <= LOW when (counter > threshold_high) else HIGH;
+pwm_high <= LOW when (counter >= threshold_high) else HIGH;
 
 -- Control of the low side PWM
 -- If counter is under threshold. 
 -- Output: 0
 -- If counter is over threshold.
 -- Output: 1
-pwm_low  <= LOW when (counter < threshold_low) else HIGH;
+pwm_low  <= LOW when (counter <= threshold_low) else HIGH;
 
 
 -- Output a pulse in the middle of the high PWM signal

@@ -14,16 +14,16 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5253 
+INFO: Helper process launched with PID 10969 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1431.492 ; gain = 49.906 ; free physical = 3511 ; free virtual = 7119
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1431.496 ; gain = 49.906 ; free physical = 2284 ; free virtual = 6361
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:19]
-INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual0' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:84]
+INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual0' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:79]
 INFO: [Synth 8-638] synthesizing module 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:27]
 INFO: [Synth 8-256] done synthesizing module 'pwm_dual' (1#1) [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:27]
-INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual1' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:96]
-INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual2' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:108]
+INFO: [Synth 8-3491] module 'pwm_dual' declared at '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm_dual.vhd:16' bound to instance 'pwm_dual1' of component 'pwm_dual' [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:91]
+WARNING: [Synth 8-3848] Net blue in module/entity top does not have driver. [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:14]
 INFO: [Synth 8-256] done synthesizing module 'top' (2#1) [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd:19]
 WARNING: [Synth 8-3917] design top has port row[7] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[6] driven by constant 1
@@ -33,12 +33,16 @@ WARNING: [Synth 8-3917] design top has port row[3] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[2] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[1] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[0] driven by constant 0
+WARNING: [Synth 8-3331] design top has unconnected port red[7]
 WARNING: [Synth 8-3331] design top has unconnected port red[5]
-WARNING: [Synth 8-3331] design top has unconnected port red[4]
 WARNING: [Synth 8-3331] design top has unconnected port red[3]
-WARNING: [Synth 8-3331] design top has unconnected port red[2]
 WARNING: [Synth 8-3331] design top has unconnected port red[1]
-WARNING: [Synth 8-3331] design top has unconnected port red[0]
+WARNING: [Synth 8-3331] design top has unconnected port green[7]
+WARNING: [Synth 8-3331] design top has unconnected port green[5]
+WARNING: [Synth 8-3331] design top has unconnected port green[3]
+WARNING: [Synth 8-3331] design top has unconnected port green[1]
+WARNING: [Synth 8-3331] design top has unconnected port blue[7]
+WARNING: [Synth 8-3331] design top has unconnected port blue[6]
 WARNING: [Synth 8-3331] design top has unconnected port blue[5]
 WARNING: [Synth 8-3331] design top has unconnected port blue[4]
 WARNING: [Synth 8-3331] design top has unconnected port blue[3]
@@ -46,7 +50,7 @@ WARNING: [Synth 8-3331] design top has unconnected port blue[2]
 WARNING: [Synth 8-3331] design top has unconnected port blue[1]
 WARNING: [Synth 8-3331] design top has unconnected port blue[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1476.242 ; gain = 94.656 ; free physical = 3524 ; free virtual = 7132
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.246 ; gain = 94.656 ; free physical = 2296 ; free virtual = 6374
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -59,10 +63,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.242 ; gain = 94.656 ; free physical = 3523 ; free virtual = 7131
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.246 ; gain = 94.656 ; free physical = 2296 ; free virtual = 6373
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.242 ; gain = 94.656 ; free physical = 3523 ; free virtual = 7131
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1476.246 ; gain = 94.656 ; free physical = 2296 ; free virtual = 6373
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -97,33 +101,34 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 Finished Parsing XDC File [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.srcs/constrs_1/imports/Embedded/ZYBO_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.391 ; gain = 0.000 ; free physical = 3273 ; free virtual = 6881
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1801.902 ; gain = 0.000 ; free physical = 2043 ; free virtual = 6121
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.391 ; gain = 0.000 ; free physical = 3273 ; free virtual = 6881
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.902 ; gain = 0.000 ; free physical = 2044 ; free virtual = 6121
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.391 ; gain = 0.000 ; free physical = 3273 ; free virtual = 6881
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.391 ; gain = 0.000 ; free physical = 3273 ; free virtual = 6881
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.902 ; gain = 0.000 ; free physical = 2044 ; free virtual = 6121
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.902 ; gain = 0.000 ; free physical = 2044 ; free virtual = 6121
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3351 ; free virtual = 6959
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 2121 ; free virtual = 6199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3352 ; free virtual = 6960
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 2121 ; free virtual = 6199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3354 ; free virtual = 6962
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 2123 ; free virtual = 6201
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "duty_cycle_signal" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3345 ; free virtual = 6953
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 2115 ; free virtual = 6193
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -136,17 +141,19 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 6     
-	   2 Input     11 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 3     
-	                2 Bit    Registers := 3     
+	               32 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 6     
-	   2 Input     10 Bit        Muxes := 6     
-	   3 Input      2 Bit        Muxes := 3     
-	   5 Input      1 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 12    
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 4     
+	   8 Input     10 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -154,6 +161,10 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input     10 Bit        Muxes := 1     
 Module pwm_dual 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -164,6 +175,7 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 2     
 	   3 Input      2 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 2     
@@ -184,6 +196,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "duty_cycle_signal" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "duty_cycle_signal" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 WARNING: [Synth 8-3917] design top has port row[7] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[6] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[5] driven by constant 1
@@ -192,12 +206,16 @@ WARNING: [Synth 8-3917] design top has port row[3] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[2] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[1] driven by constant 1
 WARNING: [Synth 8-3917] design top has port row[0] driven by constant 0
+WARNING: [Synth 8-3331] design top has unconnected port red[7]
 WARNING: [Synth 8-3331] design top has unconnected port red[5]
-WARNING: [Synth 8-3331] design top has unconnected port red[4]
 WARNING: [Synth 8-3331] design top has unconnected port red[3]
-WARNING: [Synth 8-3331] design top has unconnected port red[2]
 WARNING: [Synth 8-3331] design top has unconnected port red[1]
-WARNING: [Synth 8-3331] design top has unconnected port red[0]
+WARNING: [Synth 8-3331] design top has unconnected port green[7]
+WARNING: [Synth 8-3331] design top has unconnected port green[5]
+WARNING: [Synth 8-3331] design top has unconnected port green[3]
+WARNING: [Synth 8-3331] design top has unconnected port green[1]
+WARNING: [Synth 8-3331] design top has unconnected port blue[7]
+WARNING: [Synth 8-3331] design top has unconnected port blue[6]
 WARNING: [Synth 8-3331] design top has unconnected port blue[5]
 WARNING: [Synth 8-3331] design top has unconnected port blue[4]
 WARNING: [Synth 8-3331] design top has unconnected port blue[3]
@@ -205,7 +223,7 @@ WARNING: [Synth 8-3331] design top has unconnected port blue[2]
 WARNING: [Synth 8-3331] design top has unconnected port blue[1]
 WARNING: [Synth 8-3331] design top has unconnected port blue[0]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3333 ; free virtual = 6943
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 2103 ; free virtual = 6183
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -217,13 +235,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3210 ; free virtual = 6818
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1980 ; free virtual = 6057
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3210 ; free virtual = 6818
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -235,7 +253,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -259,7 +277,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -272,7 +290,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -284,25 +302,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -318,53 +336,49 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     2|
-|2     |CARRY4 |    82|
-|3     |LUT1   |     6|
-|4     |LUT2   |   383|
-|5     |LUT3   |     1|
-|6     |LUT4   |     5|
-|7     |LUT6   |     4|
-|8     |MUXF7  |     2|
-|9     |MUXF8  |     1|
-|10    |FDRE   |   108|
-|11    |FDSE   |    10|
-|12    |IBUF   |     5|
-|13    |OBUF   |    20|
-|14    |OBUFT  |    12|
+|1     |BUFG   |     1|
+|2     |CARRY4 |    68|
+|3     |LUT1   |     2|
+|4     |LUT2   |   314|
+|5     |LUT4   |     4|
+|6     |LUT6   |    40|
+|7     |FDRE   |    63|
+|8     |FDSE   |     5|
+|9     |IBUF   |     5|
+|10    |OBUF   |    16|
+|11    |OBUFT  |    16|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+------------+-----------+------+
 |      |Instance    |Module     |Cells |
 +------+------------+-----------+------+
-|1     |top         |           |   641|
-|2     |  pwm_dual0 |pwm_dual   |   192|
-|3     |  pwm_dual1 |pwm_dual_0 |   191|
-|4     |  pwm_dual2 |pwm_dual_1 |   191|
+|1     |top         |           |   534|
+|2     |  pwm_dual0 |pwm_dual   |   248|
+|3     |  pwm_dual1 |pwm_dual_0 |   248|
 +------+------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.391 ; gain = 420.805 ; free physical = 3208 ; free virtual = 6816
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.902 ; gain = 420.312 ; free physical = 1977 ; free virtual = 6053
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1802.391 ; gain = 94.656 ; free physical = 3266 ; free virtual = 6874
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1802.398 ; gain = 420.805 ; free physical = 3266 ; free virtual = 6874
+Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1801.902 ; gain = 94.656 ; free physical = 2034 ; free virtual = 6110
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1801.910 ; gain = 420.312 ; free physical = 2034 ; free virtual = 6110
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 85 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 68 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.398 ; gain = 0.000 ; free physical = 3205 ; free virtual = 6813
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.910 ; gain = 0.000 ; free physical = 1973 ; free virtual = 6049
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-19 Infos, 48 Warnings, 8 Critical Warnings and 0 Errors encountered.
+21 Infos, 57 Warnings, 8 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1802.398 ; gain = 420.906 ; free physical = 3260 ; free virtual = 6868
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1802.398 ; gain = 0.000 ; free physical = 3260 ; free virtual = 6868
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1801.910 ; gain = 420.414 ; free physical = 2028 ; free virtual = 6105
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1801.910 ; gain = 0.000 ; free physical = 2028 ; free virtual = 6105
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 26 11:50:01 2019...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 26 14:33:46 2019...
