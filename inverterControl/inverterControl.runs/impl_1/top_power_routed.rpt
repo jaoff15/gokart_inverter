@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Tue Feb 26 14:34:51 2019
+| Date             : Tue Feb 26 16:12:54 2019
 | Host             : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -53,12 +53,12 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |      502 |       --- |             --- |
-|   LUT as Logic |     0.004 |      282 |     17600 |            1.60 |
+| Slice Logic    |     0.004 |      508 |       --- |             --- |
+|   LUT as Logic |     0.004 |      279 |     17600 |            1.59 |
 |   CARRY4       |    <0.001 |       68 |      4400 |            1.55 |
 |   Register     |    <0.001 |       68 |     35200 |            0.19 |
 |   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     0.003 |      162 |       --- |             --- |
+| Signals        |     0.003 |      160 |       --- |             --- |
 | I/O            |     0.027 |       37 |       100 |           37.00 |
 | Static Power   |     0.093 |          |           |                 |
 | Total          |     0.129 |          |           |                 |

@@ -5,17 +5,17 @@ use ieee.numeric_std.all;
 
 -- Duty cycles
 -- Percent   Decimal   Input to module
---  1%      = 0.010   =  10
---  10%     = 0.100   =  100
---  50%     = 0.500   =  500
---  100%    = 1.000   =  1000
+--  1%      = 0.010   =  1
+--  10%     = 0.100   =  10
+--  50%     = 0.500   =  50
+--  100%    = 1.000   =  100
 
 -- PWM frequency
 -- 0Hz --> 125MHz/2000 = 62.5kHz
 
 entity pwm_dual is
     Port ( clk            : in  std_logic;                              -- Input clock
-		   duty_cycle 	  : in  signed(10 downto 0);                    -- duty_cycle*1000. 501 => 0.501 = 50.1%
+		   duty_cycle 	  : in  signed(10 downto 0);                    -- duty_cycle*100. 501 => 0.501 = 50.1%
            phase          : in  std_logic_vector(1 downto 0) := "00";   -- 0 = 0degrees, 1 = 120 degrees, 2 = 240 degrees
            pwm_high       : out std_logic;                              -- Output PWM high signal
            pwm_low        : out std_logic;                              -- Output PWM low signal
@@ -35,10 +35,10 @@ architecture Behavioral of pwm_dual is
     constant LOW  				: std_logic 			 := '0';
    
 	-- Deadtime
-	constant DEADTIME  			: signed(10 downto 0)    := "00001000000";   -- 1/(Clk/2000)*deadtime = actual deadtime [s]
+	constant DEADTIME  			: signed(10 downto 0)    := "00000000100";   -- 1/(Clk/2000)*deadtime = actual deadtime [s]
     
     -- Counter limits. When the count reaches the limit. The counting direction is changed.
-    constant COUNT_MAX 			: signed(31 downto 0)    := x"000003E8";      -- 1,000
+    constant COUNT_MAX 			: signed(31 downto 0)    := x"00000064";      -- 100
     constant COUNT_MIN 			: signed(31 downto 0)    := x"00000000";      -- 0
 	
     -- Counter that counts on every clock pulse 
@@ -73,12 +73,14 @@ begin
             
             -- 01 => 120 degrees of phase shift. Add 120 degrees
             elsif phase = "01" then
-                counter <= x"0000029A";  -- COUNT_MAX*3/3 = 666
+--                counter <= x"0000029A";  -- COUNT_MAX*3/3 = 67
+                counter <= x"00000043";  -- COUNT_MAX*3/3 = 67
                 dir <= UP;
             
             -- 10 => 240 degrees of phase shift. Add 240 degrees of phase shift
             elsif phase = "10" then
-                counter <= x"0000014D"; -- (COUNT_MAX*2/(2/3))-COUNT_MAX = 333
+--                counter <= x"0000014D"; -- (COUNT_MAX*2/(2/3))-COUNT_MAX = 33
+                counter <= x"00000021"; -- (COUNT_MAX*2/(2/3))-COUNT_MAX = 33
                 dir <= DOWN;
             end if;
         end if;
