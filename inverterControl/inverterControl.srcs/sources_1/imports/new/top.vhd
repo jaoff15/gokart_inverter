@@ -84,7 +84,7 @@ end process;
 pwm_dual0:pwm_dual
 port map(
            clk            => pwm_freq,
-           duty_cycle     => "00111110100", -- 50%
+           duty_cycle     => "00011111010", --"00111110100", -- 50%
            phase          => "00",
            pwm_high       => red(7),
            pwm_low        => red(6),

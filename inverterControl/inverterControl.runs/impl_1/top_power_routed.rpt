@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Mon Feb 25 13:40:40 2019
+| Date             : Tue Feb 26 11:51:05 2019
 | Host             : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |      604 |       --- |             --- |
+| Slice Logic    |     0.004 |      611 |       --- |             --- |
 |   LUT as Logic |     0.004 |      302 |     17600 |            1.72 |
-|   CARRY4       |    <0.001 |       76 |      4400 |            1.73 |
+|   CARRY4       |    <0.001 |       82 |      4400 |            1.86 |
 |   Register     |    <0.001 |      118 |     35200 |            0.34 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   F7/F8 Muxes  |    <0.001 |        3 |     17600 |            0.02 |
 |   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |     0.003 |      202 |       --- |             --- |
+| Signals        |     0.003 |      208 |       --- |             --- |
 | I/O            |     0.041 |       37 |       100 |           37.00 |
 | Static Power   |     0.093 |          |           |                 |
 | Total          |     0.142 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.012 |       0.008 |      0.004 |
+| Vccint    |       1.000 |     0.011 |       0.008 |      0.004 |
 | Vccaux    |       1.800 |     0.007 |       0.002 |      0.005 |
 | Vcco33    |       3.300 |     0.013 |       0.012 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

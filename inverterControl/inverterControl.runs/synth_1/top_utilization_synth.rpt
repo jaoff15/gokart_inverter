@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Mon Feb 25 13:39:34 2019
+| Date         : Tue Feb 26 11:50:00 2019
 | Host         : offersen-S550CB running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -146,13 +146,13 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  381 |                 LUT |
+| LUT2     |  383 |                 LUT |
 | FDRE     |  108 |        Flop & Latch |
-| CARRY4   |   76 |          CarryLogic |
+| CARRY4   |   82 |          CarryLogic |
 | OBUF     |   20 |                  IO |
 | OBUFT    |   12 |                  IO |
 | FDSE     |   10 |        Flop & Latch |
-| LUT1     |    7 |                 LUT |
+| LUT1     |    6 |                 LUT |
 | LUT4     |    5 |                 LUT |
 | IBUF     |    5 |                  IO |
 | LUT6     |    4 |                 LUT |

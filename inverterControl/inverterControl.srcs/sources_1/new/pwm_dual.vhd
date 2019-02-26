@@ -107,17 +107,17 @@ end process;
 
 -- Control of the high side PWM
 -- If counter is over threshold.
--- Output: 1
--- If counter is under threshold. 
 -- Output: 0
-pwm_high <= HIGH when (counter > threshold_high) else LOW;
+-- If counter is under threshold. 
+-- Output: 1
+pwm_high <= LOW when (counter > threshold_high) else HIGH;
 
 -- Control of the low side PWM
 -- If counter is under threshold. 
--- Output: 1
--- If counter is over threshold.
 -- Output: 0
-pwm_low  <= HIGH when (counter < threshold_low) else LOW;
+-- If counter is over threshold.
+-- Output: 1
+pwm_low  <= LOW when (counter < threshold_low) else HIGH;
 
 
 -- Output a pulse in the middle of the high PWM signal
