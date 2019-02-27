@@ -42,10 +42,7 @@ architecture Behavioral of top is
     end component;
     
     
-    -- ************ Signals ************
-    -- Clock prescaler
-    signal prescaler        : unsigned(31 downto 0) := x"00000000";
-    
+    -- ************ Signals ************   
     -- PWM freq
     signal pwm_freq             : std_logic;
     signal duty_cycle_signal    : signed(10 downto 0);
@@ -54,32 +51,40 @@ begin
 -- Set row
 row <= "11111110";
 
---pwm_freq <= prescaler(0);
 
 -- Select PWM frequency dependign 
 with sw select
-    duty_cycle_signal <=    "00000000000" when "0000",  -- 000
-                            "00000011001" when "0001",  -- 25
-                            "00000110010" when "0011",  -- 50
-                            "00001001011" when "0111",  -- 75
-                            "00001011111" when "1100",  -- 95
-                            "00001011110" when "1110",  -- 94
-                            "00001100100" when "1111",  -- 100
+    duty_cycle_signal <=    "00000000000" when "0000",
+                            "00000000001" when "0001",
+                            "00000000010" when "0010",
+                            "00000000011" when "0011",
+                            "00000000100" when "0100",
+                            "00000000101" when "0101",
+                            "00000000110" when "0110",
+                            "00000000111" when "0111",
+                            "00001011101" when "1000",
+                            "00001011110" when "1001",
+                            "00001011111" when "1010",
+                            "00001100000" when "1011",
+                            "00001100001" when "1100",
+                            "00001100010" when "1101",
+                            "00001100011" when "1110",
+                            "00001100100" when "1111",
                             "00000000000" when others;
-
---prescaling_process:
---process (clk)
---begin
---   if rising_edge(clk) then
---        prescaler <= prescaler + 1;
---   end if;
---end process;
+--    duty_cycle_signal <=    "00000000000" when "0000",  -- 000
+--                            "00000011001" when "0001",  -- 25
+--                            "00000110010" when "0011",  -- 50
+--                            "00001001011" when "0111",  -- 75
+--                            "00001011111" when "1100",  -- 95
+--                            "00001011110" when "1110",  -- 94
+--                            "00001100100" when "1111",  -- 100
+--                            "00000000000" when others;
 
 -- Phase 1. 0 degrees phase shift
 pwm_dual0:pwm_dual
 port map(
            clk            => clk,
-           duty_cycle     => duty_cycle_signal, --"00111110100", -- 50%
+           duty_cycle     => duty_cycle_signal, 
            phase          => "00",
            pwm_high       => red(6),
            pwm_low        => red(4),
@@ -91,7 +96,7 @@ port map(
 pwm_dual1:pwm_dual
 port map(
            clk            => clk,
-           duty_cycle     => duty_cycle_signal, -- 50%
+           duty_cycle     => duty_cycle_signal,
            phase          => "01",
            pwm_high       => red(2),
            pwm_low        => red(0),
@@ -102,7 +107,7 @@ port map(
 ---- Phase 3. 240 degrees phase shift
 --pwm_dual2:pwm_dual
 --port map(
---           clk            => pwm_freq,
+--           clk            => clk,
 --           duty_cycle     => "00111110100", -- 50%
 --           phase          => "10",
 --           pwm_high       => blue(6),

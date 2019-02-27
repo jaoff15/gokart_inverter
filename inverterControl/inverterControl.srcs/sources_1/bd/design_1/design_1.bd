@@ -1,0 +1,53 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z010clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "pwm_dual_0": ""
+    },
+    "components": {
+      "pwm_dual_0": {
+        "vlnv": "xilinx.com:module_ref:pwm_dual:1.0",
+        "xci_name": "design_1_pwm_dual_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pwm_dual",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "duty_cycle": {
+            "direction": "I",
+            "left": "10",
+            "right": "0"
+          },
+          "phase": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "pwm_high": {
+            "direction": "O"
+          },
+          "pwm_low": {
+            "direction": "O"
+          },
+          "pwm_high_middle": {
+            "direction": "O"
+          },
+          "pwm_low_middle": {
+            "direction": "O"
+          }
+        }
+      }
+    }
+  }
+}

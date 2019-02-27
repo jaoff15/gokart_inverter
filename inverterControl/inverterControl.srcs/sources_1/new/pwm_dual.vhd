@@ -36,27 +36,33 @@ architecture Behavioral of pwm_dual is
    
 	-- Deadtime
 	constant DEADTIME  			: signed(10 downto 0)    := "00000000100";   -- 1/(Clk/2000)*deadtime = actual deadtime [s]
+	signal   HALF_DEADTIME      : signed(10 downto 0)    := "00000000000";
     
     -- Counter limits. When the count reaches the limit. The counting direction is changed.
-    constant COUNT_MAX 			: signed(31 downto 0)    := x"00000064";      -- 100
-    constant COUNT_MIN 			: signed(31 downto 0)    := x"00000000";      -- 0
+    constant COUNT_MAX 			: signed(10 downto 0)    := "00001100100";      -- 100
+    constant COUNT_MIN 			: signed(10 downto 0)    := "00000000000";      -- 0
 	
     -- Counter that counts on every clock pulse 
-    signal counter 				: signed(31 downto 0)    := x"00000000";
+    signal counter 				: signed(10 downto 0)    := "00000000000";
     
     -- Thresholds for PWM outputs
-	signal threshold_high 		: signed(31 downto 0)    := x"00000000";
-	signal threshold_low  		: signed(31 downto 0)    := x"00000000";
+	signal threshold_high 		: signed(10 downto 0)    := "00000000000";
+	signal threshold_low  		: signed(10 downto 0)    := "00000000000";
 
     -- Counting direction (up or down)
     signal dir 					: std_logic_vector(1 downto 0) := UNINITIALIZED;
+   
 begin
 
+HALF_DEADTIME(9 downto 0) <= DEADTIME(10 downto 1);
+
 -- Find thresholds
--- If the high threshold gets within MAX-DEADTIME then it is limits to MAX-DEADTIME. 
--- This means that the PWM cant reach 100% but it can reach 0% 
-threshold_high(10 downto 0) <= duty_cycle when (duty_cycle < COUNT_MAX(10 downto 0) - DEADTIME) else COUNT_MAX(10 downto 0) - DEADTIME;
-threshold_low(10 downto 0)  <= threshold_high(10 downto 0) + DEADTIME;
+
+threshold_high <= duty_cycle - HALF_DEADTIME when (duty_cycle - HALF_DEADTIME <= COUNT_MAX) else COUNT_MIN;
+
+threshold_low  <= duty_cycle + HALF_DEADTIME when (duty_cycle + HALF_DEADTIME >= COUNT_MIN) else COUNT_MAX;
+
+
 
 
 -- Counts on every clock pulse
@@ -68,19 +74,19 @@ begin
         if dir = UNINITIALIZED then
             -- 00 => 0 degrees phase shift. Add 0 degrees
             if phase = "00" then
-                counter <= x"00000000";
+                counter <= "00000000000";
                 dir <= UP;
             
             -- 01 => 120 degrees of phase shift. Add 120 degrees
             elsif phase = "01" then
 --                counter <= x"0000029A";  -- COUNT_MAX*3/3 = 67
-                counter <= x"00000043";  -- COUNT_MAX*3/3 = 67
+                counter <= "00001000011";  -- COUNT_MAX*3/3 = 67
                 dir <= UP;
             
             -- 10 => 240 degrees of phase shift. Add 240 degrees of phase shift
             elsif phase = "10" then
 --                counter <= x"0000014D"; -- (COUNT_MAX*2/(2/3))-COUNT_MAX = 33
-                counter <= x"00000021"; -- (COUNT_MAX*2/(2/3))-COUNT_MAX = 33
+                counter <= "00000100001"; -- (COUNT_MAX*2/(2/3))-COUNT_MAX = 33
                 dir <= DOWN;
             end if;
         end if;
