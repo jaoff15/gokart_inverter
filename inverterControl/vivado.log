@@ -1,0 +1,755 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Feb 17 21:11:34 2019
+# Process ID: 21276
+# Current directory: C:/_SDU/1sem/Project/gokart_inverter/inverterControl
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16128 C:\_SDU\1sem\Project\gokart_inverter\inverterControl\inverterControl.xpr
+# Log file: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/vivado.log
+# Journal file: C:/_SDU/1sem/Project/gokart_inverter/inverterControl\vivado.jou
+#-----------------------------------------------------------
+start_guioopen_project C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.xprIINFO: [Project 1-313] Project file moved from '/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl' since last save.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.ip_user_files', nor could it be found using path 'C:/home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specifiedIINFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.oopen_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:12 . Memory (MB): peak = 832.469 ; gain = 206.359uexit
+INFO: [Common 17-206] Exiting Vivareset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 21:44:08 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 21:44:08 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 21:45:07 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 21:45:07 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 21:45:36 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 21:45:36 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 21:46:21 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 21:46:21 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 21:46:57 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 21:46:57 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 21:48:56 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 21:48:56 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2018.3
+  **** Build date : Dec  7 2018-00:40:27
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210279772620A
+open_hw_target: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1838.254 ; gain = 933.461
+current_hw_device [get_hw_devices xc7z010_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1435] Device xc7z010 (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+export_ip_user_files -of_objects  [get_files C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/generic_pwm.vhd] -no_script -reset -force -quiet
+remove_files  C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/generic_pwm.vhd
+add_files -norecurse C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:03:39 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:03:39 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:05:05 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:05:05 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pwm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 77c12e7d02084dccbaf1e23b84047367 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_behav xil_defaultlib.top -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.top
+Built simulation snapshot top_behav
+
+****** Webtalk v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim/xsim.dir/top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim/xsim.dir/top_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Feb 17 22:10:03 2019. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2018.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sun Feb 17 22:10:03 2019...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1911.352 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_behav -key {Behavioral:sim_1:Functional:top} -tclbatch {top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1918.734 ; gain = 7.383
+add_force {/top/clk_8ns} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run 10 us
+run all
+run: Time (s): cpu = 00:00:25 ; elapsed = 00:00:21 . Memory (MB): peak = 1922.574 ; gain = 0.000
+run 10 ns
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1922.574 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 77c12e7d02084dccbaf1e23b84047367 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_behav xil_defaultlib.top -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1922.574 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/top/generic_pwm0}} 
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+add_force {/top/generic_pwm0/clk} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 10 ns
+run 100 ns
+run 100 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:18:23 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:18:23 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:22:22 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:22:22 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:28:36 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:28:36 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:36:12 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:36:12 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:38:50 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:39:34 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:39:34 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:43:06 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:43:06 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:46:16 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:46:16 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:48:58 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:48:58 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:49:16 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:49:16 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:55:06 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 22:58:38 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 22:58:38 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pwm'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/imports/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 77c12e7d02084dccbaf1e23b84047367 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_behav xil_defaultlib.top -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.top
+Built simulation snapshot top_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_behav -key {Behavioral:sim_1:Functional:top} -tclbatch {top.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1943.336 ; gain = 0.000
+add_force {/top/clk_8ns} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 ns
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 100 us
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 ms
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pwm'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 77c12e7d02084dccbaf1e23b84047367 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_behav xil_defaultlib.top -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.top
+Built simulation snapshot top_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 2128.738 ; gain = 0.000
+add_force {/top/clk_8ns} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run 1 ms
+run 1 ms
+add_force {/top/generic_pwm0/threshold_high} -radix hex {1 0ns}
+add_force {/top/generic_pwm0/threshold_high[8]} -radix hex {0 0ns}
+remove_forces { {/top/generic_pwm0/threshold_high[8]} }
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pwm'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 77c12e7d02084dccbaf1e23b84047367 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot top_behav xil_defaultlib.top -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm [pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.top
+Built simulation snapshot top_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2128.738 ; gain = 0.000
+run 1 ms
+run 1 ms
+run 1 ms
+add_force {/top/clk_8ns} -radix hex {1 0ns} {0 4000ps} -repeat_every 8000ps
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj top_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pwm'
+ERROR: [VRFC 10-1551] variable outside of subprogram or process must be 'shared' [C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd:53]
+ERROR: [VRFC 10-1551] variable outside of subprogram or process must be 'shared' [C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd:54]
+ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd:23]
+INFO: [VRFC 10-3070] VHDL file 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.srcs/sources_1/new/pwm.vhd' ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:13:42 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 23:13:42 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:16:25 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:20:12 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 23:20:12 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:24:02 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 23:24:02 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:25:40 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 23:25:40 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:26:55 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 23:26:55 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:29:54 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 23:29:54 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sun Feb 17 23:33:25 2019] Launched synth_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1/runme.log
+[Sun Feb 17 23:33:25 2019] Launched impl_1...
+Run output will be captured here: C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z010_1]
+set_property PROGRAM.FILE {C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1/top.bit} [get_hw_devices xc7z010_1]
+program_hw_devices [get_hw_devices xc7z010_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z010_1] 0]
+INFO: [Labtools 27-1434] Device xc7z010 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
