@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <Runs Version="1" Minor="0">
+<<<<<<< HEAD
 	<Run Id="synth_1" LaunchDir="C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
 	<Run Id="impl_1" LaunchDir="C:/_SDU/1sem/Project/gokart_inverter/inverterControl/inverterControl.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+=======
+	<Run Id="synth_1" LaunchDir="/home/jonas/Documents/SDU/Master/Semester 1/Project/software/git/gokart_inverter/inverterControl/inverterControl.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="impl_1" LaunchDir="/home/jonas/Documents/SDU/Master/Semester 1/Project/software/git/gokart_inverter/inverterControl/inverterControl.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+>>>>>>> 4efbdfd94ef8bc666bd8d56843a097e3c3c2fd20
 		<Parent Id="synth_1"/>
 	</Run>
 	<Parameters>

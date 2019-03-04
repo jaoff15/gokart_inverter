@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]/home/jonas/Documents/SDU/Master/Semester1/Project/software/git/gokart_inverter/inverterControl/inverterControl.sdk/fsbl_0/Release/fsbl_0.elf
+	/home/jonas/Documents/SDU/Master/Semester1/Project/software/git/gokart_inverter/inverterControl/inverterControl.sdk/block_adc_wrapper_hw_platform_0/block_adc_wrapper.bit
+	/home/jonas/Documents/SDU/Master/Semester1/Project/software/git/gokart_inverter/inverterControl/inverterControl.sdk/Generic_XADC/Debug/Generic_XADC.elf
+}

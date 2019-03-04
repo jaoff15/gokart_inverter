@@ -2,6 +2,7 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+<<<<<<< HEAD
 # Start of session at: Wed Feb 27 15:13:00 2019
 # Process ID: 22494
 # Current directory: /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1
@@ -10,3 +11,13 @@
 # Journal file: /home/offersen/Programs/vivadoprojects/gokart_inverter/inverterControl/inverterControl.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace
+=======
+# Start of session at: Thu Feb 28 10:35:39 2019
+# Process ID: 31005
+# Current directory: /home/jonas/Documents/SDU/Master/Semester 1/Project/software/git/gokart_inverter/inverterControl/inverterControl.runs/synth_1
+# Command line: vivado -log block_adc_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source block_adc_wrapper.tcl
+# Log file: /home/jonas/Documents/SDU/Master/Semester 1/Project/software/git/gokart_inverter/inverterControl/inverterControl.runs/synth_1/block_adc_wrapper.vds
+# Journal file: /home/jonas/Documents/SDU/Master/Semester 1/Project/software/git/gokart_inverter/inverterControl/inverterControl.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source block_adc_wrapper.tcl -notrace
+>>>>>>> 4efbdfd94ef8bc666bd8d56843a097e3c3c2fd20

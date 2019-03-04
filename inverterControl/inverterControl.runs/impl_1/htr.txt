@@ -6,4 +6,8 @@
 # Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 #
 
+<<<<<<< HEAD
 vivado -log top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
+=======
+vivado -log block_adc_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source block_adc_wrapper.tcl -notrace
+>>>>>>> 4efbdfd94ef8bc666bd8d56843a097e3c3c2fd20
