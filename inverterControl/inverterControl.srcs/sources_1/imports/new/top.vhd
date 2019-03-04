@@ -1,5 +1,3 @@
- 
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.NUMERIC_STD.all;
@@ -18,6 +16,7 @@ end top;
 
 architecture Behavioral of top is
     -- ************ Components ************
+<<<<<<< HEAD
     -- Dual PWM generator
     component pwm_dual is
     Port (  
@@ -119,3 +118,27 @@ port map(
 
 
 end Behavioral;
+=======
+
+    
+    -- ************ Signals ************
+    -- Clock prescaler
+    signal prescaler        : unsigned(31 downto 0) := x"00000000";
+
+begin
+
+
+prescaling_process:
+process (clk)
+begin
+   if rising_edge(clk) then
+        prescaler <= prescaler + 1;
+   end if;
+end process;
+
+
+
+
+
+end Behavioral;
+>>>>>>> master
