@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# 
+# Start of session at: Mon Mar  4 07:00:54 2019
+# Process ID: 14395
+# Current directory: /home/jonas/Documents/SDU/Master/Semester1/Project/software/git/gokart_inverter/inverterControl/inverterControl.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/jonas/Documents/SDU/Master/Semester1/Project/software/git/gokart_inverter/inverterControl/inverterControl.sdk/webtalk/webtalk.log
+# Journal file: /home/jonas/Documents/SDU/Master/Semester1/Project/software/git/gokart_inverter/inverterControl/inverterControl.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl
